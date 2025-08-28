@@ -1,0 +1,27 @@
+# Development files
+src/
+public/
+.vscode/
+.git/
+.github/
+
+# Configuration files
+vite.config.ts
+tsconfig.json
+tsconfig.app.json
+tsconfig.node.json
+eslint.config.js
+setup.js
+
+# Build artifacts
+node_modules/
+*.log
+.DS_Store
+*.tsbuildinfo
+
+# Development specific
+index.html
+README.dev.md
+
+# Only include what's needed for the package
+# dist/ folder and package.json will be included automatically
