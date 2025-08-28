@@ -27,7 +27,7 @@ export default defineConfig(({ mode }) => {
           },
         },
         sourcemap: true,
-        emptyOutDir: true,
+        emptyOutDir: false,
       },
     };
   }

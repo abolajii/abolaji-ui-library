@@ -7,6 +7,105 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2025-08-28
 
+### 🎉 Initial Release
+
+#### **Complete React UI Component Library**
+
+- **20+ Production-Ready Components**: Comprehensive set of UI components for modern React applications
+- **100% TypeScript Support**: Full type safety with IntelliSense and auto-completion
+- **Zero Runtime Dependencies**: Only peer dependency on React for maximum compatibility
+- **Accessibility First**: Full keyboard navigation and screen reader support
+
+#### **Form Components**
+
+- **Input**: Text inputs with validation, error states, and multiple variants
+- **Textarea**: Multi-line text inputs with auto-resize and character counting
+- **Select**: Dropdown selects with search, custom options, and disabled states
+- **MultiSelect**: Multiple selection with tags and search functionality
+- **PasswordInput**: Password fields with strength indicators and show/hide toggle
+- **DatePicker**: Date selection with validation and constraints
+- **FileUpload**: Drag & drop file uploads with progress indicators
+- **Checkbox**: Single and grouped checkboxes with custom styling
+- **RadioGroup**: Radio button groups with horizontal/vertical orientation
+- **Toggle**: Modern toggle switches with smooth animations
+- **RangeSlider**: Value sliders with min/max constraints and step control
+
+#### **Navigation & Layout**
+
+- **Tabs**: Tabbed interfaces with pills and underline variants
+- **Card**: Flexible card containers with headers, footers, and variants
+- **Modal**: Overlay modals with customizable sizes and actions
+
+#### **Feedback Components**
+
+- **Toast**: Notification toasts with multiple variants and flexible positioning
+  - Support for both standalone and container-based positioning
+  - Enhanced width handling for responsive design
+  - Proper stacking for multiple notifications
+- **Alert**: Inline alerts with dismissible actions and variants
+- **LoadingSpinner**: Loading indicators with multiple sizes and colors
+- **ProgressBar**: Progress indicators with labels and variants
+- **Badge**: Status badges with color variants
+- **Tooltip**: Contextual tooltips with flexible positioning
+
+#### **Features**
+
+- **Responsive Design**: Mobile-first approach with breakpoint-aware components
+- **Dark Mode Ready**: Components designed for theme switching
+- **Customizable Styling**: Tailwind CSS classes with easy customization
+- **Form Validation**: Built-in validation support with error handling
+- **Animation Support**: Smooth transitions and micro-interactions
+- **Bundle Optimized**: Tree-shakeable exports for optimal bundle size
+
+#### **Developer Experience**
+
+- **Complete TypeScript Definitions**: Full type coverage for all components
+- **Comprehensive Documentation**: Examples and usage patterns included
+- **Live Showcase**: Interactive demo application showing all components
+- **Easy Integration**: Simple npm install with immediate usage
+
+#### **Technical Specifications**
+
+- **React 18+**: Compatible with modern React features
+- **TypeScript 5.8+**: Latest TypeScript support
+- **Vite Build System**: Fast development and optimized production builds
+- **ESM/CJS Support**: Dual package format for maximum compatibility
+
+### Package Information
+
+- **Installation**: `npm install @abolajii/ajstory-ui-components`
+- **Bundle Size**: ~62KB (11.8KB gzipped)
+- **License**: MIT
+- **Repository**: https://github.com/abolajii/ajstory-ui-components
+
+### Fixed
+
+- **TypeScript Support**: Fixed TypeScript declaration files (.d.ts) now properly included in published package
+- **Build Process**: Updated Vite configuration to preserve TypeScript files during build
+- **Package Structure**: Ensured all component type definitions are available for consumers
+
+### Technical
+
+- Set `emptyOutDir: false` in Vite config to preserve TypeScript declarations
+- Verified complete TypeScript support with proper type exports
+
+## [1.0.1] - 2025-08-28
+
+### Fixed
+
+- **TypeScript Declarations**: Added proper TypeScript declaration files (.d.ts) generation for full type support
+- **Build Process**: Created dedicated `tsconfig.lib.json` for library builds with proper type generation
+- **Component Types**: Fixed unused variable issues in `Inputv2.tsx` component
+- **Package Exports**: Ensured `dist/index.d.ts` is properly generated and exported
+
+### Technical
+
+- Added `tsconfig.lib.json` for library-specific TypeScript configuration
+- Updated build script to use dedicated TypeScript config
+- Fixed TypeScript compilation errors for clean builds
+
+## [1.0.0] - 2025-08-28
+
 ### Added
 
 - **Initial release** of AJ Story UI Components library

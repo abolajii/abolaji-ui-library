@@ -14,6 +14,8 @@ type ToastProps = {
   duration?: number;
   isVisible: boolean;
   onClose: () => void;
+  className?: string;
+  standalone?: boolean; // Whether the toast handles its own positioning
 };
 
 export const Toast = ({
@@ -23,6 +25,8 @@ export const Toast = ({
   duration = 5000,
   isVisible,
   onClose,
+  className = "",
+  standalone = true,
 }: ToastProps) => {
   useEffect(() => {
     if (isVisible && duration > 0) {
@@ -51,16 +55,20 @@ export const Toast = ({
 
   if (!isVisible) return null;
 
+  const containerClasses = standalone
+    ? `fixed ${positions[position]} z-50`
+    : "relative";
+
   return (
     <div
-      className={`fixed ${
-        positions[position]
-      } z-50 transition-all duration-300 ${
+      className={`${containerClasses} transition-all duration-300 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"
-      }`}
+      } ${className} ${!standalone ? "w-full" : ""}`}
     >
       <div
-        className={`max-w-sm w-full ${variants[variant]} shadow-lg rounded-lg pointer-events-auto border`}
+        className={`${!standalone ? "w-full" : "min-w-80 max-w-md"} ${
+          variants[variant]
+        } shadow-lg rounded-lg pointer-events-auto border`}
       >
         <div className="p-4">
           <div className="flex items-center">

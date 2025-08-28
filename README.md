@@ -2,7 +2,7 @@
 
 A comprehensive, modern React UI component library built with TypeScript and Tailwind CSS. Features a complete set of form controls, navigation elements, feedback components, and interactive utilities designed for modern web applications.
 
-[![npm version](https://badge.fury.io/js/@ajstory%2Fui-components.svg)](https://badge.fury.io/js/@ajstory%2Fui-components)
+[![npm version](https://badge.fury.io/js/@abolajii%2Fajstory-ui-components.svg)](https://badge.fury.io/js/@abolajii%2Fajstory-ui-components)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18+-61DAFB.svg)](https://reactjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-Styled-38B2AC.svg)](https://tailwindcss.com/)
@@ -10,11 +10,11 @@ A comprehensive, modern React UI component library built with TypeScript and Tai
 ## 📦 Installation
 
 ```bash
-npm install @ajstory/ui-components
+npm install @abolajii/ajstory-ui-components
 # or
-yarn add @ajstory/ui-components
+yarn add @abolajii/ajstory-ui-components
 # or
-pnpm add @ajstory/ui-components
+pnpm add @abolajii/ajstory-ui-components
 ```
 
 ## 🎯 Features
@@ -64,7 +64,9 @@ pnpm add @ajstory/ui-components
 
 ```tsx
 import React, { useState } from "react";
-import { Input, Button, Alert, Select } from "@ajstory/ui-components";
+```tsx
+```tsx
+import { Input, Button, Alert } from "@abolajii/ajstory-ui-components";
 
 function MyForm() {
   const [name, setName] = useState("");
@@ -246,7 +248,7 @@ This library uses Tailwind CSS for styling. You can customize the appearance by:
 
 ```tsx
 import { useState } from "react";
-import { Input, Button, Alert } from "@ajstory/ui-components";
+import { Input, Button, Alert } from "ajstory-ui-components";
 
 function ValidatedForm() {
   const [formData, setFormData] = useState({
@@ -361,7 +363,7 @@ MIT License - see the [LICENSE](LICENSE) file for details.
 ## 🔗 Links
 
 - [GitHub Repository](https://github.com/yourusername/ajstory-ui-components)
-- [NPM Package](https://www.npmjs.com/package/@ajstory/ui-components)
+- [NPM Package](https://www.npmjs.com/package/ajstory-ui-components)
 - [Documentation](https://github.com/yourusername/ajstory-ui-components#readme)
 - [Issues](https://github.com/yourusername/ajstory-ui-components/issues)
 

@@ -106,7 +106,6 @@ export const InputField = React.memo<InputFieldProps>(
     onFocus,
     onBlur,
   }) => {
-    const [isFocused, setIsFocused] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
 
     // Get color theme classes
@@ -212,12 +211,10 @@ export const InputField = React.memo<InputFieldProps>(
 
     // Handle focus events
     const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
-      setIsFocused(true);
       if (onFocus) onFocus(e);
     };
 
     const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-      setIsFocused(false);
       if (onBlur) onBlur(e);
     };
 
