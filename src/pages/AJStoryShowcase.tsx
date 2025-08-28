@@ -20,7 +20,7 @@ import {
   Badge,
   ProgressBar,
   LoadingSpinner,
-} from "ajstory-ui-kit";
+} from "abolaji-ui-kit";
 import { Toast } from "../components/ui/Toast";
 
 // Type definitions
@@ -731,14 +731,14 @@ const AJStoryShowcase = () => {
             today!
           </p>
           <div className="bg-gray-100 rounded-lg p-4 mb-4">
-            <code className="text-sm">npm install ajstory-ui-kit</code>
+            <code className="text-sm">npm install abolaji-ui-kit</code>
           </div>
           <div className="flex justify-center space-x-4">
             <Button
               variant="primary"
               onClick={() =>
                 window.open(
-                  "https://www.npmjs.com/package/ajstory-ui-kit",
+                  "https://www.npmjs.com/package/abolaji-ui-kit",
                   "_blank"
                 )
               }
@@ -749,7 +749,7 @@ const AJStoryShowcase = () => {
               variant="secondary"
               onClick={() =>
                 window.open(
-                  "https://github.com/abolajii/ajstory-ui-components",
+                  "https://github.com/abolajii/abolaji-ui-kit",
                   "_blank"
                 )
               }
@@ -807,7 +807,7 @@ const AJStoryShowcase = () => {
           <div className="bg-blue-50 p-3 rounded">
             <p className="text-sm text-blue-800">
               💡 <strong>Pro tip:</strong> This entire page is built using only
-              components from the ajstory-ui-kit library!
+              components from the abolaji-ui-kit library!
             </p>
           </div>
         </div>

@@ -15,8 +15,8 @@ Thank you for your interest in contributing to AJ Story UI Components! We welcom
 1. **Fork and clone the repository**
 
    ```bash
-   git clone https://github.com/yourusername/ajstory-ui-components.git
-   cd ajstory-ui-components
+   git clone https://github.com/abolajii/abolaji-ui-kit.git
+   cd abolaji-ui-kit
    ```
 
 2. **Install dependencies**

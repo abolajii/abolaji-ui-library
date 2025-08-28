@@ -1,23 +1,8 @@
-# 🚀 AJ Story UI Kit
+# 🚀 Abolaji UI Kit
 
-A comprehensive, modern React UI compone## 🚀 Quick Start
+A comprehensive, modern React UI component library built with TypeScript and Tailwind CSS. Features a complete set of form controls, navigation elements, feedback components, and interactive utilities designed for modern web applications.
 
-```tsx
-import React, { useState } from "react";
-import { Input, Button, Alert, Select } from "ajstory-ui-kit";
-
-function MyForm() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [country, setCountry] = useState("");
-  const [showSuccess, setShowSuccess] = useState(false);
-
-  const countries = [
-    { value: "us", label: "United States" },
-    { value: "ca", label: "Canada" },
-    { value: "uk", label: "United Kingdom" },ith TypeScript and Tailwind CSS. Features a complete set of form controls, navigation elements, feedback components, and interactive utilities designed for modern web applications.
-
-[![npm version](https://badge.fury.io/js/ajstory-ui-kit.svg)](https://badge.fury.io/js/ajstory-ui-kit)
+[![npm version](https://badge.fury.io/js/abolaji-ui-kit.svg)](https://badge.fury.io/js/abolaji-ui-kit)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18+-61DAFB.svg)](https://reactjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-Styled-38B2AC.svg)](https://tailwindcss.com/)
@@ -25,11 +10,11 @@ function MyForm() {
 ## 📦 Installation
 
 ```bash
-npm install ajstory-ui-kit
+npm install abolaji-ui-kit
 # or
-yarn add ajstory-ui-kit
+yarn add abolaji-ui-kit
 # or
-pnpm add ajstory-ui-kit
+pnpm add abolaji-ui-kit
 ```
 
 ## 🎯 Features
@@ -79,10 +64,7 @@ pnpm add ajstory-ui-kit
 
 ```tsx
 import React, { useState } from "react";
-```tsx
-```tsx
-```tsx
-import { Input, Button, Alert } from "ajstory-ui-kit";
+import { Input, Button, Alert } from "abolaji-ui-kit";
 
 function MyForm() {
   const [name, setName] = useState("");
@@ -264,7 +246,7 @@ This library uses Tailwind CSS for styling. You can customize the appearance by:
 
 ```tsx
 import { useState } from "react";
-import { Input, Button, Alert } from "ajstory-ui-components";
+import { Input, Button, Alert } from "abolaji-ui-kit";
 
 function ValidatedForm() {
   const [formData, setFormData] = useState({
@@ -347,7 +329,7 @@ All components are designed with mobile-first responsive principles:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/ajstory-ui-components.git
+git clone https://github.com/abolajii/abolaji-ui-kit.git
 
 # Install dependencies
 npm install
@@ -378,18 +360,18 @@ MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🔗 Links
 
-- [GitHub Repository](https://github.com/yourusername/ajstory-ui-components)
-- [NPM Package](https://www.npmjs.com/package/ajstory-ui-components)
-- [Documentation](https://github.com/yourusername/ajstory-ui-components#readme)
-- [Issues](https://github.com/yourusername/ajstory-ui-components/issues)
+- [GitHub Repository](https://github.com/abolajii/abolaji-ui-kit)
+- [NPM Package](https://www.npmjs.com/package/abolaji-ui-kit)
+- [Documentation](https://github.com/abolajii/abolaji-ui-kit#readme)
+- [Issues](https://github.com/abolajii/abolaji-ui-kit/issues)
 
 ## 📞 Support
 
 If you have any questions or need help, please:
 
-- Check the [documentation](https://github.com/yourusername/ajstory-ui-components#readme)
-- Search [existing issues](https://github.com/yourusername/ajstory-ui-components/issues)
-- Create a [new issue](https://github.com/yourusername/ajstory-ui-components/issues/new)
+- Check the [documentation](https://github.com/abolajii/abolaji-ui-kit#readme)
+- Search [existing issues](https://github.com/abolajii/abolaji-ui-kit/issues)
+- Create a [new issue](https://github.com/abolajii/abolaji-ui-kit/issues/new)
 
 ---
 
