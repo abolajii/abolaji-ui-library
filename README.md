@@ -1,8 +1,23 @@
-# 🚀 AJ Story UI Components
+# 🚀 AJ Story UI Kit
 
-A comprehensive, modern React UI component library built with TypeScript and Tailwind CSS. Features a complete set of form controls, navigation elements, feedback components, and interactive utilities designed for modern web applications.
+A comprehensive, modern React UI compone## 🚀 Quick Start
 
-[![npm version](https://badge.fury.io/js/@abolajii%2Fajstory-ui-components.svg)](https://badge.fury.io/js/@abolajii%2Fajstory-ui-components)
+```tsx
+import React, { useState } from "react";
+import { Input, Button, Alert, Select } from "ajstory-ui-kit";
+
+function MyForm() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [country, setCountry] = useState("");
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  const countries = [
+    { value: "us", label: "United States" },
+    { value: "ca", label: "Canada" },
+    { value: "uk", label: "United Kingdom" },ith TypeScript and Tailwind CSS. Features a complete set of form controls, navigation elements, feedback components, and interactive utilities designed for modern web applications.
+
+[![npm version](https://badge.fury.io/js/ajstory-ui-kit.svg)](https://badge.fury.io/js/ajstory-ui-kit)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18+-61DAFB.svg)](https://reactjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-Styled-38B2AC.svg)](https://tailwindcss.com/)
@@ -10,11 +25,11 @@ A comprehensive, modern React UI component library built with TypeScript and Tai
 ## 📦 Installation
 
 ```bash
-npm install @abolajii/ajstory-ui-components
+npm install ajstory-ui-kit
 # or
-yarn add @abolajii/ajstory-ui-components
+yarn add ajstory-ui-kit
 # or
-pnpm add @abolajii/ajstory-ui-components
+pnpm add ajstory-ui-kit
 ```
 
 ## 🎯 Features
@@ -66,7 +81,8 @@ pnpm add @abolajii/ajstory-ui-components
 import React, { useState } from "react";
 ```tsx
 ```tsx
-import { Input, Button, Alert } from "@abolajii/ajstory-ui-components";
+```tsx
+import { Input, Button, Alert } from "ajstory-ui-kit";
 
 function MyForm() {
   const [name, setName] = useState("");

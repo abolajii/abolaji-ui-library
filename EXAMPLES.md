@@ -4,8 +4,7 @@
 
 ```tsx
 import React, { useState } from "react";
-import { Input, Button, Select,  MultiSelect
-} from 'ajstory-ui-components';lert } from 'ajstory-ui-components';
+import { Input, Button, Select, MultiSelect, Alert } from "ajstory-ui-kit";
 
 function ContactForm() {
   const [formData, setFormData] = useState({
@@ -71,7 +70,7 @@ function ContactForm() {
 
 ```tsx
 import React, { useState } from "react";
-import { Button, Modal, Input } from "ajstory-ui-components";
+import { Button, Modal, Input } from "ajstory-ui-kit";
 
 function ModalExample() {
   const [isOpen, setIsOpen] = useState(false);
@@ -243,7 +242,7 @@ function SignupForm() {
 
 ```tsx
 import React, { useState } from "react";
-import { Button, Toast } from "ajstory-ui-components";
+import { Button, Toast } from "ajstory-ui-kit";
 
 function NotificationExample() {
   const [toasts, setToasts] = useState([]);

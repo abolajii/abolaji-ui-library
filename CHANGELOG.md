@@ -5,6 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2025-08-28
+
+### Documentation
+
+- Complete documentation consistency update
+- Verified all import examples use correct package name "ajstory-ui-kit"
+- Updated installation commands and quick start guides
+- Ensured complete alignment between NPM package and GitHub repository
+
+## [1.0.1] - 2025-08-28
+
+### Fixed
+
+- **Repository URLs**: Updated all repository references from `ajstory-ui-components` to `ajstory-ui-kit`
+- **Package Links**: Corrected NPM package links and repository URLs in package.json
+- **Documentation**: Updated README, CHANGELOG, and all documentation to reflect correct package name
+- **Import Examples**: Fixed all import examples in documentation to use `ajstory-ui-kit`
+
+### Technical
+
+- Updated package.json repository, homepage, and bugs URLs to match GitHub repository name
+- Corrected NPM badge links in README
+- Synchronized package name across all documentation files
+
 ## [1.0.0] - 2025-08-28
 
 ### 🎉 Initial Release
@@ -73,10 +97,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Package Information
 
-- **Installation**: `npm install @abolajii/ajstory-ui-components`
+- **Installation**: `npm install ajstory-ui-kit`
 - **Bundle Size**: ~62KB (11.8KB gzipped)
 - **License**: MIT
-- **Repository**: https://github.com/abolajii/ajstory-ui-components
+- **Repository**: https://github.com/abolajii/ajstory-ui-kit
 
 ### Fixed
 
