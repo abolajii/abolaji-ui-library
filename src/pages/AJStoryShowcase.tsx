@@ -1,24 +1,26 @@
 import { useState, useEffect } from "react";
-import { Input } from "../components/ui/Input";
-import { Textarea } from "../components/ui/TextArea";
-import { Select } from "../components/ui/Select";
-import { MultiSelect } from "../components/ui/MultiSelect";
-import { Checkbox } from "../components/ui/Checkbox";
-import { RadioGroup } from "../components/ui/RadioGroup";
-import { Toggle } from "../components/ui/Toggle";
-import { PasswordInput } from "../components/ui/Password";
-import { RangeSlider } from "../components/ui/RangeSlider";
-import { DatePicker } from "../components/ui/DatePicker";
-import { FileUpload } from "../components/ui/Fileupload";
-import { Button } from "../components/ui/Button";
-import { Tabs } from "../components/ui/Tabs";
-import { Card } from "../components/ui/Card";
-import { Modal } from "../components/ui/Modal";
-import { Tooltip } from "../components/ui/Tooltip";
-import { Alert } from "../components/ui/Alert";
-import { Badge } from "../components/ui/Badge";
-import { ProgressBar } from "../components/ui/ProgressBar";
-import { LoadingSpinner } from "../components/ui/LoadingSpinner";
+import {
+  Input,
+  Textarea,
+  Select,
+  MultiSelect,
+  Checkbox,
+  RadioGroup,
+  Toggle,
+  PasswordInput,
+  RangeSlider,
+  DatePicker,
+  FileUpload,
+  Button,
+  Tabs,
+  Card,
+  Modal,
+  Tooltip,
+  Alert,
+  Badge,
+  ProgressBar,
+  LoadingSpinner,
+} from "abolaji-ui-kit";
 import { Toast } from "../components/ui/Toast";
 
 // Type definitions
@@ -51,7 +53,7 @@ interface ToastNotification {
   isVisible: boolean;
 }
 
-const AbolajiShowcase = () => {
+const AJStoryShowcase = () => {
   // Form state
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
@@ -829,4 +831,4 @@ const AbolajiShowcase = () => {
   );
 };
 
-export default AbolajiShowcase;
+export default AJStoryShowcase;

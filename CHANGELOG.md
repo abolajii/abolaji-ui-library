@@ -28,17 +28,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2025-08-28
 
 ### Changed
+
 - **Package Name**: Renamed from "ajstory-ui-kit" to "abolaji-ui-kit"
 - **Author**: Updated to "Abolaji"
 - **Repository**: All URLs updated to reflect new package name
 - **Documentation**: Complete rebranding across all files
 
 ### Added
+
 - Fresh start with "abolaji-ui-kit" package name
 - Updated import statements throughout documentation
 - New repository structure and branding
 
 ### Technical
+
 - Updated package.json with new package name and repository URLs
 - Updated all documentation files (README, EXAMPLES, CHANGELOG)
 - Corrected all import examples to use "abolaji-ui-kit"
