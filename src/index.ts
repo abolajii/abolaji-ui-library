@@ -1,4 +1,4 @@
-// AJ Story UI Components - Main Export File
+// Abolaji UI Components - Main Export File
 // Form Controls
 export { Input } from "./components/ui/Input";
 export { Textarea } from "./components/ui/TextArea";

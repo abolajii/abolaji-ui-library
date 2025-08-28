@@ -1,6 +1,6 @@
 import { useState } from "react";
 import StorybookPreview from "./pages/Utility";
-import AJStoryShowcase from "./pages/AJStoryShowcase";
+import AbolajiShowcase from "./pages/AbolajiShowcase";
 import { Button } from "./components/ui/Button";
 
 const App = () => {
@@ -29,7 +29,7 @@ const App = () => {
       </div>
 
       {/* Content */}
-      {currentView === "showcase" ? <AJStoryShowcase /> : <StorybookPreview />}
+      {currentView === "showcase" ? <AbolajiShowcase /> : <StorybookPreview />}
     </div>
   );
 };

@@ -53,7 +53,7 @@ interface ToastNotification {
   isVisible: boolean;
 }
 
-const AJStoryShowcase = () => {
+const AbolajiShowcase = () => {
   // Form state
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
@@ -497,7 +497,7 @@ const AJStoryShowcase = () => {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
-            🚀 AJ Story UI Components
+            🚀 Abolaji UI Components
           </h1>
           <p className="text-xl text-gray-600 mb-6">
             The Ultimate React Component Library Showcase
@@ -724,7 +724,7 @@ const AJStoryShowcase = () => {
         {/* Footer */}
         <Card className="p-6 text-center">
           <h3 className="text-xl font-semibold mb-4">
-            🎉 Ready to Use AJ Story UI Components?
+            🎉 Ready to Use Abolaji UI Components?
           </h3>
           <p className="text-gray-600 mb-4">
             Install the package and start building beautiful React applications
@@ -764,7 +764,7 @@ const AJStoryShowcase = () => {
       <Modal
         isOpen={showModal}
         onClose={() => setShowModal(false)}
-        title="📚 AJ Story UI Components Guide"
+        title="📚 Abolaji UI Components Guide"
         size="large"
         footer={
           <Button variant="primary" onClick={() => setShowModal(false)}>
@@ -774,7 +774,7 @@ const AJStoryShowcase = () => {
       >
         <div className="space-y-4">
           <p>
-            Welcome to the comprehensive showcase of AJ Story UI Components!
+            Welcome to the comprehensive showcase of Abolaji UI Components!
           </p>
 
           <div className="space-y-3">
@@ -833,4 +833,4 @@ const AJStoryShowcase = () => {
   );
 };
 
-export default AJStoryShowcase;
+export default AbolajiShowcase;
