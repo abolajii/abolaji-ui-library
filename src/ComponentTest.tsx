@@ -26,7 +26,7 @@ const ComponentTest = () => {
           <code className="bg-blue-100 px-1 rounded">
             abolaji-ui-components
           </code>{" "}
-          (npm package v1.0.6)
+          (npm package v1.0.7)
         </p>
         <p className="text-green-700 text-xs mt-1">
           ✨ <strong>Auto-styled:</strong> CSS is automatically injected - no
@@ -177,7 +177,7 @@ const ComponentTest = () => {
         <p className="text-green-700">
           All components imported from{" "}
           <code className="bg-green-100 px-1 rounded">
-            abolaji-ui-components@1.0.6
+            abolaji-ui-components@1.0.7
           </code>
           ! CSS styles are automatically injected - no manual setup required.
         </p>
