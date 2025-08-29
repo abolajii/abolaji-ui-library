@@ -19,8 +19,8 @@ import { Textarea } from "../components/ui/TextArea";
 import { Modal } from "../components/ui/Modal";
 import { Toast } from "../components/ui/Toast";
 import { Tabs } from "../components/ui/Tabs";
+import { Card } from "../components/ui/Card";
 
-// Main Preview Component
 export default function StorybookPreview() {
   const [formData, setFormData] = useState({
     name: "",
@@ -37,74 +37,278 @@ export default function StorybookPreview() {
     birthDate?: string;
     message?: string;
   };
+  
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showComponentStates, setShowComponentStates] = useState(false);
-
-  const [showAlert, setShowAlert] = useState<
-    "success" | "error" | "warning" | "info" | null
-  >(null);
+  const [showComponentStates, setShowComponentStates] = useState(true);
+  const [showAlert, setShowAlert] = useState<"success" | "error" | "warning" | "info" | null>(null);
   const [showModal, setShowModal] = useState(false);
   const [showToast, setShowToast] = useState(false);
-  const [activeTab, setActiveTab] = useState("tab1");
+  const [activeTab, setActiveTab] = useState("components");
   const [checkboxValue, setCheckboxValue] = useState(false);
   const [toggleValue, setToggleValue] = useState(false);
   const [radioValue, setRadioValue] = useState("");
   const [rangeValue, setRangeValue] = useState(50);
-  const [multiSelectValue, setMultiSelectValue] = useState<(string | number)[]>(
-    []
-  );
+  const [multiSelectValue, setMultiSelectValue] = useState<(string | number)[]>([]);
   const [passwordValue, setPasswordValue] = useState("");
   const [progressValue, setProgressValue] = useState(0);
 
   const countryOptions = [
-    { value: "us", label: "United States" },
-    { value: "ca", label: "Canada" },
-    { value: "uk", label: "United Kingdom" },
-    { value: "de", label: "Germany" },
-    { value: "fr", label: "France" },
+    { value: "us", label: "🇺🇸 United States" },
+    { value: "ca", label: "🇨🇦 Canada" },
+    { value: "uk", label: "🇬🇧 United Kingdom" },
+    { value: "de", label: "🇩🇪 Germany" },
+    { value: "fr", label: "🇫🇷 France" },
   ];
 
   const radioOptions = [
-    { value: "option1", label: "Option 1" },
-    { value: "option2", label: "Option 2" },
-    { value: "option3", label: "Option 3" },
+    { value: "beginner", label: "🌱 Beginner" },
+    { value: "intermediate", label: "⚡ Intermediate" },
+    { value: "advanced", label: "🚀 Advanced" },
   ];
 
   const skillsOptions = [
-    { value: "js", label: "JavaScript" },
-    { value: "react", label: "React" },
-    { value: "vue", label: "Vue" },
-    { value: "angular", label: "Angular" },
-    { value: "node", label: "Node.js" },
-    { value: "python", label: "Python" },
-    { value: "java", label: "Java" },
+    { value: "js", label: "🟨 JavaScript" },
+    { value: "react", label: "⚛️ React" },
+    { value: "vue", label: "💚 Vue.js" },
+    { value: "angular", label: "🅰️ Angular" },
+    { value: "node", label: "🟢 Node.js" },
+    { value: "python", label: "🐍 Python" },
+    { value: "java", label: "☕ Java" },
   ];
 
   const tabData = [
     {
-      id: "tab1",
-      label: "Components",
+      id: "components",
+      label: "🔧 Form Components",
       content: (
-        <div className="p-4 text-gray-600">
-          Form components and controls showcase
+        <div className="p-6 space-y-6">
+          <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg border">
+            <h3 className="text-lg font-semibold text-gray-800 mb-4">
+              📝 Interactive Form Elements
+            </h3>
+            <p className="text-gray-600 mb-4">
+              Explore all form components with real-time validation and various states.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <Input
+                  label="Sample Input"
+                  placeholder="Enter text here..."
+                  value=""
+                  onChange={() => {}}
+                  icon="👤"
+                />
+                <Input
+                  label="Input with Error"
+                  value="invalid-email"
+                  error="Please enter a valid email address"
+                  onChange={() => {}}
+                  icon="📧"
+                />
+                <PasswordInput
+                  label="Password"
+                  placeholder="Create a secure password"
+                  value={passwordValue}
+                  onChange={(e) => setPasswordValue(e.target.value)}
+                  showStrength={true}
+                />
+              </div>
+              <div className="space-y-4">
+                <Select
+                  label="Country"
+                  placeholder="Select your country"
+                  options={countryOptions}
+                  value=""
+                  onChange={() => {}}
+                />
+                <DatePicker
+                  label="Date of Birth"
+                  placeholder="Select your birth date"
+                  value=""
+                  onChange={() => {}}
+                />
+                <MultiSelect
+                  label="Skills & Technologies"
+                  placeholder="Choose your skills..."
+                  options={skillsOptions}
+                  value={multiSelectValue}
+                  onChange={(e) => setMultiSelectValue(e.target.value)}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       ),
     },
     {
-      id: "tab2",
-      label: "Advanced",
-      badge: "12",
+      id: "controls",
+      label: "🎛️ Interactive Controls",
+      badge: `${skillsOptions.length}`,
       content: (
-        <div className="p-4 text-gray-600">Advanced interactive components</div>
+        <div className="p-6 space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card className="p-6">
+              <h4 className="font-semibold text-gray-800 mb-4">✅ Selection Controls</h4>
+              <div className="space-y-4">
+                <Checkbox
+                  label="I agree to the terms and conditions"
+                  checked={checkboxValue}
+                  onChange={(e) => setCheckboxValue(e.target.checked)}
+                />
+                <Toggle
+                  label="Enable email notifications"
+                  checked={toggleValue}
+                  onChange={setToggleValue}
+                />
+                <RadioGroup
+                  label="Experience Level"
+                  options={radioOptions}
+                  value={radioValue}
+                  onChange={(e) => setRadioValue(e.target.value)}
+                  orientation="vertical"
+                />
+              </div>
+            </Card>
+            
+            <Card className="p-6">
+              <h4 className="font-semibold text-gray-800 mb-4">🎚️ Range & Progress</h4>
+              <div className="space-y-4">
+                <RangeSlider
+                  label={`Completion: ${rangeValue}%`}
+                  min={0}
+                  max={100}
+                  value={rangeValue}
+                  onChange={(e) => setRangeValue(parseInt(e.target.value))}
+                />
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    🚀 Loading Progress
+                  </label>
+                  <ProgressBar value={progressValue} showLabel={true} />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    ⏳ Loading Spinners
+                  </label>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-4">
+                      <LoadingSpinner size="small" variant="primary" />
+                      <span className="text-sm text-gray-600">Small spinner</span>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <LoadingSpinner size="medium" variant="primary" />
+                      <span className="text-sm text-gray-600">Medium spinner</span>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <LoadingSpinner size="large" variant="gray" />
+                      <span className="text-sm text-gray-600">Large spinner</span>
+                    </div>
+                    <div className="flex items-center gap-4 bg-gray-800 p-2 rounded">
+                      <LoadingSpinner size="medium" variant="white" />
+                      <span className="text-sm text-white">White spinner on dark background</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-6">
+              <h4 className="font-semibold text-gray-800 mb-4">🏷️ Status Indicators</h4>
+              <div className="space-y-4">
+                <div>
+                  <p className="text-sm text-gray-600 mb-2">Badge Examples:</p>
+                  <div className="flex gap-2 flex-wrap">
+                    <Badge variant="primary">Active</Badge>
+                    <Badge variant="success">Verified</Badge>
+                    <Badge variant="warning">Pending</Badge>
+                    <Badge variant="error">Failed</Badge>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-600 mb-2">With Tooltips:</p>
+                  <div className="flex gap-2">
+                    <Tooltip content="This is a helpful tooltip!">
+                      <Button variant="secondary" size="small">Hover me</Button>
+                    </Tooltip>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
       ),
     },
     {
-      id: "tab3",
-      label: "UI Elements",
+      id: "advanced",
+      label: "⚡ Advanced Features",
       content: (
-        <div className="p-4 text-gray-600">
-          Cards, modals, and layout components
+        <div className="p-6 space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <Card className="p-6">
+              <h4 className="font-semibold text-gray-800 mb-4">📎 File Upload</h4>
+              <FileUpload
+                label="Upload Documents"
+                onFileSelect={(file: File) => console.log("File selected:", file.name)}
+                accept=".pdf,.doc,.docx,.txt"
+                maxSize={10}
+              />
+            </Card>
+            
+            <Card className="p-6">
+              <h4 className="font-semibold text-gray-800 mb-4">💬 Text Area</h4>
+              <Textarea
+                label="Project Description"
+                placeholder="Tell us about your project..."
+                value=""
+                onChange={() => {}}
+                rows={4}
+              />
+            </Card>
+          </div>
+          
+          <Card className="p-6">
+            <h4 className="font-semibold text-gray-800 mb-4">🔔 Notifications & Alerts</h4>
+            <div className="space-y-4">
+              <div className="flex gap-3 flex-wrap">
+                <Button
+                  variant="primary"
+                  size="small"
+                  onClick={() => setShowAlert("success")}
+                >
+                  ✅ Success Alert
+                </Button>
+                <Button
+                  variant="secondary"
+                  size="small"
+                  onClick={() => setShowAlert("warning")}
+                >
+                  ⚠️ Warning Alert
+                </Button>
+                <Button
+                  variant="secondary"
+                  size="small"
+                  onClick={() => setShowAlert("error")}
+                >
+                  ❌ Error Alert
+                </Button>
+                <Button
+                  variant="secondary"
+                  size="small"
+                  onClick={() => setShowModal(true)}
+                >
+                  🪟 Open Modal
+                </Button>
+                <Button
+                  variant="secondary"
+                  size="small"
+                  onClick={() => setShowToast(true)}
+                >
+                  🍞 Show Toast
+                </Button>
+              </div>
+            </div>
+          </Card>
         </div>
       ),
     },
@@ -194,192 +398,63 @@ export default function StorybookPreview() {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen p-5 font-sans">
-      <h1 className="text-center text-3xl font-bold text-gray-800 mb-8">
-        🚀 Storybook Form Components Preview
-      </h1>
-
-      <button
-        className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors duration-200 mb-6 font-medium"
-        onClick={() => setShowComponentStates(!showComponentStates)}
-      >
-        {showComponentStates ? "Hide" : "Show"} Component States Examples
-      </button>
-
-      {showComponentStates && (
-        <div className="bg-white rounded-lg p-6 mb-6 shadow-sm">
-          <h2 className="text-xl font-semibold mb-6 text-gray-800">
-            Component States Examples
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-6">
-            <div>
-              <h3 className="text-lg font-medium mb-4 text-gray-700">
-                Form Controls
-              </h3>
-              <Input
-                label="Sample Input"
-                placeholder="Enter text here"
-                value=""
-                onChange={() => {}}
-              />
-              <Input
-                label="Input with Error"
-                value="invalid-email"
-                error="Please enter a valid email address"
-                onChange={() => {}}
-              />
-              <Checkbox
-                label="Accept Terms"
-                checked={checkboxValue}
-                onChange={(e) => setCheckboxValue(e.target.checked)}
-              />
-              <Toggle
-                label="Enable Notifications"
-                checked={toggleValue}
-                onChange={setToggleValue}
-              />
-              <RadioGroup
-                label="Choose Option"
-                options={radioOptions}
-                value={radioValue}
-                onChange={(e) => setRadioValue(e.target.value)}
-                orientation="vertical"
-              />
-            </div>
-
-            <div>
-              <h3 className="text-lg font-medium mb-4 text-gray-700">
-                Advanced Inputs
-              </h3>
-              <Select
-                label="Searchable Select"
-                options={countryOptions}
-                placeholder="Type to search countries..."
-                value=""
-                onChange={() => {}}
-              />
-              <PasswordInput
-                label="Password"
-                value={passwordValue}
-                onChange={(e) => setPasswordValue(e.target.value)}
-                placeholder="Enter password"
-                showStrength={true}
-              />
-              <RangeSlider
-                label="Volume Control"
-                value={rangeValue}
-                onChange={(e) => setRangeValue(Number(e.target.value))}
-                min={0}
-                max={100}
-                showValue={true}
-              />
-              <MultiSelect
-                label="Skills"
-                options={skillsOptions}
-                value={multiSelectValue}
-                onChange={(e) => setMultiSelectValue(e.target.value)}
-                placeholder="Select your skills"
-              />
-            </div>
-
-            <div>
-              <h3 className="text-lg font-medium mb-4 text-gray-700">
-                UI Components
-              </h3>
-              <div className="space-y-2 mb-4">
-                <div className="flex space-x-2">
-                  <Badge variant="success">Success</Badge>
-                  <Badge variant="error">Error</Badge>
-                </div>
-                <div className="flex space-x-2">
-                  <Badge variant="warning">Warning</Badge>
-                  <Badge variant="info">Info</Badge>
-                </div>
-              </div>
-              <ProgressBar
-                label="Auto Progress"
-                value={progressValue}
-                variant="success"
-                size="medium"
-              />
-              <ProgressBar
-                label="Upload Progress"
-                value={75}
-                variant="primary"
-                size="small"
-                className="mt-3"
-              />
-              <div className="mt-4 flex items-center space-x-3">
-                <LoadingSpinner size="small" variant="primary" />
-                <LoadingSpinner size="medium" variant="primary" />
-                <LoadingSpinner size="large" variant="primary" />
-              </div>
-              <div className="mt-4 space-y-2">
-                <Tooltip content="This opens a sample modal dialog">
-                  <Button
-                    onClick={() => setShowModal(true)}
-                    variant="primary"
-                    size="small"
-                  >
-                    Open Modal
-                  </Button>
-                </Tooltip>
-                <Button
-                  onClick={() => setShowToast(true)}
-                  variant="secondary"
-                  size="small"
-                >
-                  Show Toast
-                </Button>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-medium mb-4 text-gray-700">
-                Layout & More
-              </h3>
-
-              <Tabs
-                tabs={tabData}
-                activeTab={activeTab}
-                onChange={setActiveTab}
-                variant="pills"
-                className="mb-4"
-              />
-              <FileUpload
-                label="Upload Files"
-                accept=".pdf,.doc,.docx,.jpg,.png"
-                multiple={true}
-                onChange={() => {}}
-                placeholder="Drag & drop files here"
-              />
-            </div>
-          </div>
-
-          <div className="mt-6">
-            <h3 className="text-lg font-medium mb-4 text-gray-700">
-              Accordion Example
-            </h3>
-            {/* <Accordion
-              items={accordionItems}
-              allowMultiple={true}
-              defaultOpen={["item1"]}
-            /> */}
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8 px-4">
+      <div className="max-w-6xl mx-auto space-y-8">
+        {/* Header */}
+        <div className="text-center space-y-4">
+          <h1 className="text-4xl font-bold text-gray-800">
+            🧪 Component Utility Lab
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Interactive testing ground for all UI components. Experiment with different states, 
+            configurations, and real-time form validation in a comprehensive environment.
+          </p>
+          <div className="flex justify-center gap-4">
+            <Button 
+              variant="primary" 
+              onClick={() => setShowComponentStates(!showComponentStates)}
+            >
+              {showComponentStates ? "📦 Hide Components" : "🔬 Show Components"}
+            </Button>
+            <Button 
+              variant="secondary" 
+              onClick={handleReset}
+            >
+              🔄 Reset All
+            </Button>
           </div>
         </div>
-      )}
 
-      <div className="bg-white rounded-lg p-6 mb-6 shadow-sm">
-        <h2 className="text-xl font-semibold mb-4 text-gray-800">
-          📝 Complete Form with Validation
-        </h2>
-        <p className="text-gray-600 mb-6">
-          Try submitting the form empty to see error states, or fill it out to
-          see validation in action!
-        </p>
+        {/* Component States Section */}
+        {showComponentStates && (
+          <Card className="p-6">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">
+              🎛️ Interactive Component Playground
+            </h2>
+            
+            <Tabs 
+              tabs={tabData} 
+              activeTab={activeTab} 
+              onChange={setActiveTab} 
+            />
+          </Card>
+        )}
 
-        <div className="max-w-lg">
+        {/* Main Form Section */}
+        <Card className="p-6">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">
+            📝 Complete Form Example
+          </h2>
+          
+          <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-lg border mb-6">
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              🚀 Real-time Form Validation
+            </h3>
+            <p className="text-gray-600">
+              Experience comprehensive form validation with instant feedback and error handling.
+            </p>
+          </div>
+
           {showAlert && (
             <Alert
               variant={showAlert}
@@ -391,201 +466,124 @@ export default function StorybookPreview() {
             </Alert>
           )}
 
-          <Input
-            label="Full Name"
-            value={formData.name}
-            onChange={handleInputChange("name")}
-            placeholder="Enter your full name"
-            error={errors.name}
-            required
-          />
+          <form className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Input
+                label="Full Name *"
+                placeholder="Enter your full name..."
+                value={formData.name}
+                onChange={handleInputChange("name")}
+                error={errors.name}
+                icon="👤"
+              />
+              
+              <Input
+                label="Email Address *"
+                type="email"
+                placeholder="your.email@example.com"
+                value={formData.email}
+                onChange={handleInputChange("email")}
+                error={errors.email}
+                icon="📧"
+              />
+              
+              <Select
+                label="Country *"
+                placeholder="Select your country"
+                options={countryOptions}
+                value={formData.country}
+                onChange={handleInputChange("country")}
+                error={errors.country}
+              />
+              
+              <DatePicker
+                label="Date of Birth *"
+                placeholder="Select your birth date"
+                value={formData.birthDate}
+                onChange={handleInputChange("birthDate")}
+                error={errors.birthDate}
+              />
+            </div>
+            
+            <Textarea
+              label="Project Description *"
+              placeholder="Tell us about your project (minimum 20 characters)..."
+              value={formData.message}
+              onChange={handleInputChange("message")}
+              error={errors.message}
+              rows={4}
+            />
+            
+            <div className="flex gap-4 pt-4">
+              <Button 
+                variant="primary" 
+                onClick={handleSubmit}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "⏳ Submitting..." : "🚀 Submit Form"}
+              </Button>
+              <Button 
+                variant="secondary" 
+                onClick={handleReset}
+                disabled={isSubmitting}
+              >
+                🔄 Reset Form
+              </Button>
+            </div>
+          </form>
+        </Card>
 
-          <Input
-            label="Email Address"
-            type="email"
-            value={formData.email}
-            onChange={handleInputChange("email")}
-            placeholder="Enter your email"
-            error={errors.email}
-            required
-          />
-
-          <Select
-            label="Country"
-            value={formData.country}
-            onChange={handleInputChange("country")}
-            options={countryOptions}
-            placeholder="Select your country"
-            error={errors.country}
-            required
-          />
-
-          <DatePicker
-            label="Birth Date"
-            value={formData.birthDate}
-            onChange={handleInputChange("birthDate")}
-            error={errors.birthDate}
-            required
-            max="2010-01-01"
-          />
-
-          <Textarea
-            label="Message"
-            value={formData.message}
-            onChange={handleInputChange("message")}
-            placeholder="Enter your message (minimum 20 characters)"
-            error={errors.message}
-            required
-            maxLength={500}
-            rows={5}
-          />
-
-          <div className="mt-5">
-            <Button
-              type="submit"
-              variant="primary"
-              disabled={isSubmitting}
-              onClick={handleSubmit}
-            >
-              {isSubmitting ? "Submitting..." : "Submit Form"}
-            </Button>
-
-            <Button
-              type="button"
-              variant="secondary"
-              onClick={handleReset}
-              disabled={isSubmitting}
-            >
-              Reset Form
-            </Button>
+        {/* Stats Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-lg p-6">
+            <div className="text-purple-600 text-2xl mb-2">22+</div>
+            <div className="font-semibold text-purple-800">Components</div>
+            <div className="text-sm text-purple-600">Interactive UI Elements</div>
+          </div>
+          <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg p-6">
+            <div className="text-green-600 text-2xl mb-2">100%</div>
+            <div className="font-semibold text-green-800">Responsive</div>
+            <div className="text-sm text-green-600">Mobile-first Design</div>
+          </div>
+          <div className="bg-gradient-to-r from-orange-50 to-yellow-50 border border-orange-200 rounded-lg p-6">
+            <div className="text-orange-600 text-2xl mb-2">⚡</div>
+            <div className="font-semibold text-orange-800">Real-time</div>
+            <div className="text-sm text-orange-600">Live Validation</div>
           </div>
         </div>
+
+        {/* Modals and Notifications */}
+        {showModal && (
+          <Modal
+            isOpen={showModal}
+            onClose={() => setShowModal(false)}
+            title="🎉 Sample Modal"
+          >
+            <div className="p-4">
+              <p className="text-gray-600 mb-4">
+                This is a sample modal dialog. You can include any content here including forms, images, or other components.
+              </p>
+              <div className="flex gap-2 justify-end">
+                <Button variant="secondary" onClick={() => setShowModal(false)}>
+                  Cancel
+                </Button>
+                <Button variant="primary" onClick={() => setShowModal(false)}>
+                  Confirm
+                </Button>
+              </div>
+            </div>
+          </Modal>
+        )}
+
+        {showToast && (
+          <Toast
+            message="🎉 This is a sample toast notification!"
+            variant="success"
+            isVisible={showToast}
+            onClose={() => setShowToast(false)}
+          />
+        )}
       </div>
-
-      <div className="bg-white rounded-lg p-6 shadow-sm">
-        <h2 className="text-xl font-semibold mb-4 text-gray-800">
-          ✨ Features Included
-        </h2>
-        <ul className="text-gray-600 space-y-2 leading-relaxed">
-          <li className="flex items-start">
-            <span className="font-semibold text-gray-800 mr-2">
-              Error Validation:
-            </span>
-            Try submitting the form empty to see error messages
-          </li>
-          <li className="flex items-start">
-            <span className="font-semibold text-gray-800 mr-2">
-              Real-time Clearing:
-            </span>
-            Errors disappear as you start typing
-          </li>
-          <li className="flex items-start">
-            <span className="font-semibold text-gray-800 mr-2">
-              Required Field Indicators:
-            </span>
-            Red asterisks show required fields
-          </li>
-          <li className="flex items-start">
-            <span className="font-semibold text-gray-800 mr-2">
-              Character Limits:
-            </span>
-            Textarea shows character count
-          </li>
-          <li className="flex items-start">
-            <span className="font-semibold text-gray-800 mr-2">
-              Complete Form Library:
-            </span>
-            Input, Select, Textarea, Button, DatePicker, Checkbox, Radio,
-            Toggle, Range Slider, File Upload, Multi-Select, Password with
-            strength
-          </li>
-          <li className="flex items-start">
-            <span className="font-semibold text-gray-800 mr-2">
-              UI Components:
-            </span>
-            Alert, Modal, Toast, Badge, Progress Bar, Loading Spinner, Tabs,
-            Accordion, Card, Tooltip
-          </li>
-          <li className="flex items-start">
-            <span className="font-semibold text-gray-800 mr-2">
-              Interactive Features:
-            </span>
-            Drag & drop upload, searchable selects, password strength, real-time
-            validation, smooth animations
-          </li>
-          <li className="flex items-start">
-            <span className="font-semibold text-gray-800 mr-2">
-              Advanced Controls:
-            </span>
-            Multi-select with tags, range slider with live feedback, file upload
-            with preview
-          </li>
-          <li className="flex items-start">
-            <span className="font-semibold text-gray-800 mr-2">
-              Smooth Animations:
-            </span>
-            All components have polished transitions
-          </li>
-          <li className="flex items-start">
-            <span className="font-semibold text-gray-800 mr-2">
-              Tailwind Styled:
-            </span>
-            Clean, modern design with consistent spacing
-          </li>
-        </ul>
-      </div>
-
-      <Modal
-        isOpen={showModal}
-        onClose={() => setShowModal(false)}
-        title="Sample Modal Dialog"
-        size="medium"
-        footer={
-          <>
-            <Button variant="secondary" onClick={() => setShowModal(false)}>
-              Cancel
-            </Button>
-            <Button variant="primary" onClick={() => setShowModal(false)}>
-              Confirm
-            </Button>
-          </>
-        }
-      >
-        <p className="text-gray-600 mb-4">
-          This is a sample modal with interactive content and form elements.
-        </p>
-        <div className="space-y-4">
-          <Input
-            label="Your Name"
-            placeholder="Enter your name"
-            onChange={() => {}}
-          />
-          <Select
-            label="Preferred Contact Method"
-            options={[
-              { value: "email", label: "Email" },
-              { value: "phone", label: "Phone" },
-              { value: "sms", label: "SMS" },
-            ]}
-            placeholder="Choose method"
-            onChange={() => {}}
-          />
-          <Checkbox
-            label="I agree to the terms and conditions"
-            checked={false}
-            onChange={() => {}}
-          />
-        </div>
-      </Modal>
-
-      <Toast
-        message="This is a sample toast notification with auto-dismiss!"
-        variant="success"
-        position="top-right"
-        isVisible={showToast}
-        onClose={() => setShowToast(false)}
-        duration={3000}
-      />
     </div>
   );
 }

@@ -109,7 +109,7 @@ export const Alert: React.FC<AlertProps> = ({
                 onClick={handleClose}
                 className={`inline-flex rounded-md p-1.5 focus:outline-none focus:ring-2 focus:ring-offset-2 ${styles.button}`}
               >
-                <span className="sr-only">Dismiss</span>
+                {/* <span className="sr-only">Dismiss</span> */}
                 <svg
                   className="w-5 h-5"
                   fill="currentColor"

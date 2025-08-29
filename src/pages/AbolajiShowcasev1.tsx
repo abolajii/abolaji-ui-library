@@ -16,6 +16,29 @@ import { Modal } from "../components/ui/Modal";
 import { ProgressBar } from "../components/ui/ProgressBar";
 import { Toast } from "../components/ui/Toast";
 
+// Type definitions
+interface FormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+  country: string;
+  city: string;
+  skills: (string | number)[];
+  experience: string;
+  birthDate: string;
+  bio: string;
+  salary: number;
+  newsletter: boolean;
+  theme: string;
+  profilePicture: File | null;
+}
+
+interface FormErrors {
+  [key: string]: string;
+}
+
 interface ToastNotification {
   id: number;
   variant: "success" | "error" | "warning" | "info";
@@ -24,6 +47,26 @@ interface ToastNotification {
 }
 
 const AbolajiShowcase = () => {
+  // Form state
+  const [formData, setFormData] = useState<FormData>({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    country: "",
+    city: "",
+    skills: [],
+    experience: "",
+    birthDate: "",
+    bio: "",
+    salary: 50000,
+    newsletter: false,
+    theme: "",
+    profilePicture: null,
+  });
+
+  const [errors, setErrors] = useState<FormErrors>({});
   const [toasts, setToasts] = useState<ToastNotification[]>([]);
   const [showModal, setShowModal] = useState(false);
   const [activeShowcaseTab, setActiveShowcaseTab] = useState("overview");
@@ -61,6 +104,12 @@ const AbolajiShowcase = () => {
     { value: "lead", label: "👑 Lead/Principal (8+ years)" },
   ];
 
+  const themeOptions = [
+    { value: "light", label: "☀️ Light Theme" },
+    { value: "dark", label: "🌙 Dark Theme" },
+    { value: "auto", label: "🔄 Auto (System)" },
+  ];
+
   // Toast management
   const addToast = (message: string, variant: ToastNotification["variant"]) => {
     const newToast: ToastNotification = {
@@ -84,6 +133,83 @@ const AbolajiShowcase = () => {
 
     return () => clearTimeout(timer);
   }, [toasts.length]);
+
+  // Form validation
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+
+    if (!formData.firstName.trim())
+      newErrors.firstName = "First name is required";
+    if (!formData.lastName.trim()) newErrors.lastName = "Last name is required";
+    if (!formData.email.trim()) newErrors.email = "Email is required";
+    else if (!/\S+@\S+\.\S+/.test(formData.email))
+      newErrors.email = "Email is invalid";
+
+    if (!formData.password) newErrors.password = "Password is required";
+    else if (formData.password.length < 8)
+      newErrors.password = "Password must be at least 8 characters";
+
+    if (formData.password !== formData.confirmPassword) {
+      newErrors.confirmPassword = "Passwords do not match";
+    }
+
+    if (!formData.country) newErrors.country = "Country is required";
+    if (formData.skills.length === 0)
+      newErrors.skills = "At least one skill is required";
+    if (!formData.experience)
+      newErrors.experience = "Experience level is required";
+    if (!formData.theme) newErrors.theme = "Theme preference is required";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  // Form submission
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (validateForm()) {
+      addToast("Form submitted successfully! 🎉", "success");
+      // Reset form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+        country: "",
+        city: "",
+        skills: [],
+        experience: "",
+        birthDate: "",
+        bio: "",
+        salary: 50000,
+        newsletter: false,
+        theme: "",
+        profilePicture: null,
+      });
+    } else {
+      addToast("Please fix the errors in the form", "error");
+    }
+  };
+
+  // Calculate form completion
+  const calculateProgress = (): number => {
+    const fields = [
+      formData.firstName,
+      formData.lastName,
+      formData.email,
+      formData.password,
+      formData.confirmPassword,
+      formData.country,
+      formData.experience,
+      formData.theme,
+    ];
+    const filledFields = fields.filter((field) => field).length;
+    const skillsWeight = formData.skills.length > 0 ? 1 : 0;
+    const totalFields = fields.length + 1; // +1 for skills
+    return Math.round(((filledFields + skillsWeight) / totalFields) * 100);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8 px-4">
@@ -110,6 +236,293 @@ const AbolajiShowcase = () => {
             </Button>
           </div>
         </div>
+
+        {/* Main Form Demo */}
+        <Card className="p-8">
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-2xl font-bold text-gray-800">
+              🎨 Interactive Component Demo
+            </h2>
+            <div className="flex items-center gap-3">
+              <span className="text-sm text-gray-600">Form Progress:</span>
+              <ProgressBar value={calculateProgress()} showLabel={true} />
+            </div>
+          </div>
+
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Personal Information Section */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Input
+                label="First Name"
+                value={formData.firstName}
+                onChange={(e) => {
+                  setFormData((prev) => ({
+                    ...prev,
+                    firstName: e.target.value,
+                  }));
+                  if (errors.firstName)
+                    setErrors((prev) => ({ ...prev, firstName: "" }));
+                }}
+                placeholder="Enter your first name"
+                error={errors.firstName}
+                required
+              />
+              <Input
+                label="Last Name"
+                value={formData.lastName}
+                onChange={(e) => {
+                  setFormData((prev) => ({
+                    ...prev,
+                    lastName: e.target.value,
+                  }));
+                  if (errors.lastName)
+                    setErrors((prev) => ({ ...prev, lastName: "" }));
+                }}
+                placeholder="Enter your last name"
+                error={errors.lastName}
+                required
+              />
+            </div>
+
+            {/* Contact Information */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Input
+                label="Email Address"
+                type="email"
+                value={formData.email}
+                onChange={(e) => {
+                  setFormData((prev) => ({ ...prev, email: e.target.value }));
+                  if (errors.email)
+                    setErrors((prev) => ({ ...prev, email: "" }));
+                }}
+                placeholder="john@example.com"
+                error={errors.email}
+                required
+              />
+              <DatePicker
+                label="Birth Date"
+                value={formData.birthDate}
+                onChange={(e) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    birthDate: e.target.value,
+                  }))
+                }
+                placeholder="Select your birth date"
+              />
+            </div>
+
+            {/* Password Fields */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <PasswordInput
+                label="Password"
+                value={formData.password}
+                onChange={(e) => {
+                  setFormData((prev) => ({
+                    ...prev,
+                    password: e.target.value,
+                  }));
+                  if (errors.password)
+                    setErrors((prev) => ({ ...prev, password: "" }));
+                }}
+                placeholder="Create a secure password"
+                error={errors.password}
+                showStrength={true}
+                required
+              />
+              <PasswordInput
+                label="Confirm Password"
+                value={formData.confirmPassword}
+                onChange={(e) => {
+                  setFormData((prev) => ({
+                    ...prev,
+                    confirmPassword: e.target.value,
+                  }));
+                  if (errors.confirmPassword)
+                    setErrors((prev) => ({ ...prev, confirmPassword: "" }));
+                }}
+                placeholder="Confirm your password"
+                error={errors.confirmPassword}
+                required
+              />
+            </div>
+
+            {/* Location Fields */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Select
+                label="Country"
+                value={formData.country}
+                onChange={(e) => {
+                  setFormData((prev) => ({
+                    ...prev,
+                    country: String(e.target.value),
+                  }));
+                  if (errors.country)
+                    setErrors((prev) => ({ ...prev, country: "" }));
+                }}
+                options={countryOptions}
+                placeholder="Select your country"
+                error={errors.country}
+                required
+              />
+              <Input
+                label="City"
+                value={formData.city}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, city: e.target.value }))
+                }
+                placeholder="Enter your city"
+              />
+            </div>
+
+            {/* Skills and Experience */}
+            <div className="space-y-6">
+              <MultiSelect
+                label="Technical Skills"
+                value={formData.skills}
+                onChange={(e) => {
+                  setFormData((prev) => ({ ...prev, skills: e.target.value }));
+                  if (errors.skills)
+                    setErrors((prev) => ({ ...prev, skills: "" }));
+                }}
+                options={skillsOptions}
+                placeholder="Select your technical skills"
+                error={errors.skills}
+              />
+
+              <Select
+                label="Experience Level"
+                value={formData.experience}
+                onChange={(e) => {
+                  setFormData((prev) => ({
+                    ...prev,
+                    experience: String(e.target.value),
+                  }));
+                  if (errors.experience)
+                    setErrors((prev) => ({ ...prev, experience: "" }));
+                }}
+                options={experienceOptions}
+                placeholder="Choose your experience level"
+                error={errors.experience}
+                required
+              />
+            </div>
+
+            {/* Bio and Salary */}
+            <div className="space-y-6">
+              <Textarea
+                label="Professional Bio"
+                value={formData.bio}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, bio: e.target.value }))
+                }
+                placeholder="Tell us about your professional background..."
+                rows={4}
+                maxLength={500}
+              />
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Expected Salary: ${formData.salary.toLocaleString()}
+                </label>
+                <RangeSlider
+                  value={formData.salary}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      salary: Number(e.target.value),
+                    }))
+                  }
+                  min={30000}
+                  max={200000}
+                  step={5000}
+                  showValue={true}
+                />
+              </div>
+            </div>
+
+            {/* Preferences */}
+            <div className="space-y-6">
+              <RadioGroup
+                label="Theme Preference"
+                options={themeOptions}
+                value={formData.theme}
+                onChange={(e) => {
+                  setFormData((prev) => ({ ...prev, theme: e.target.value }));
+                  if (errors.theme)
+                    setErrors((prev) => ({ ...prev, theme: "" }));
+                }}
+                orientation="horizontal"
+                error={errors.theme}
+              />
+
+              <div className="space-y-4">
+                <Checkbox
+                  label="Subscribe to newsletter and updates"
+                  checked={formData.newsletter}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      newsletter: e.target.checked,
+                    }))
+                  }
+                />
+
+                <Toggle
+                  label="Enable email notifications"
+                  checked={formData.newsletter}
+                  onChange={(checked) =>
+                    setFormData((prev) => ({ ...prev, newsletter: checked }))
+                  }
+                />
+              </div>
+            </div>
+
+            {/* File Upload */}
+            <FileUpload
+              label="Profile Picture"
+              onFileSelect={(file: File) =>
+                setFormData((prev) => ({ ...prev, profilePicture: file }))
+              }
+              accept="image/*"
+              maxSize={5}
+            />
+
+            {/* Action Buttons */}
+            <div className="flex gap-4 pt-6">
+              <Button type="submit" variant="primary" className="flex-1">
+                🚀 Submit Form
+              </Button>
+              <Button
+                type="button"
+                variant="secondary"
+                onClick={() => {
+                  setFormData({
+                    firstName: "",
+                    lastName: "",
+                    email: "",
+                    password: "",
+                    confirmPassword: "",
+                    country: "",
+                    city: "",
+                    skills: [],
+                    experience: "",
+                    birthDate: "",
+                    bio: "",
+                    salary: 50000,
+                    newsletter: false,
+                    theme: "",
+                    profilePicture: null,
+                  });
+                  setErrors({});
+                  addToast("Form cleared successfully", "info");
+                }}
+              >
+                🔄 Clear Form
+              </Button>
+            </div>
+          </form>
+        </Card>
 
         {/* Component Showcase Documentation */}
         <Card className="p-6">
