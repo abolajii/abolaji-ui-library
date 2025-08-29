@@ -1,7 +1,7 @@
-// Abolaji UI Components - Main Export File
+// Abolaji UI Library - Main Export File
 
-// Auto-inject styles when components are imported
-import "./inject-styles";
+// Import CSS styles (users must import this manually)
+import "./index.css";
 
 // Form Controls
 export { Input } from "./components/ui/Input";

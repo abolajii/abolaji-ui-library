@@ -4,7 +4,7 @@
 
 ```tsx
 import React, { useState } from "react";
-import { Input, Button, Select, MultiSelect, Alert } from "abolaji-ui-components";
+import { Input, Button, Select, MultiSelect, Alert } from "abolaji-ui-library";
 
 function ContactForm() {
   const [formData, setFormData] = useState({
@@ -70,7 +70,7 @@ function ContactForm() {
 
 ```tsx
 import React, { useState } from "react";
-import { Button, Modal, Input } from "abolaji-ui-components";
+import { Button, Modal, Input } from "abolaji-ui-library";
 
 function ModalExample() {
   const [isOpen, setIsOpen] = useState(false);
@@ -242,7 +242,7 @@ function SignupForm() {
 
 ```tsx
 import React, { useState } from "react";
-import { Button, Toast } from "abolaji-ui-components";
+import { Button, Toast } from "abolaji-ui-library";
 
 function NotificationExample() {
   const [toasts, setToasts] = useState([]);

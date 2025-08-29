@@ -23,7 +23,7 @@ try {
   }
 
   console.log("🎉 Package test completed successfully!");
-  console.log("📦 Ready to publish abolaji-ui-components");
+  console.log("📦 Ready to publish abolaji-ui-library");
 } catch (error) {
   console.error("❌ Package test failed:", error.message);
   process.exit(1);

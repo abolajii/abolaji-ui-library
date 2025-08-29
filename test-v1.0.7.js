@@ -1,9 +1,9 @@
 // Test script to verify CSS auto-injection works
-import { Input, Button, Alert } from "abolaji-ui-components";
+import { Input, Button, Alert } from "abolaji-ui-library";
 import { createElement } from "react";
 
 console.log(
-  "✅ Components imported successfully from abolaji-ui-components@1.0.7"
+  "✅ Components imported successfully from abolaji-ui-library@1.0.0"
 );
 console.log("🎨 CSS should auto-inject when components are imported");
 console.log("📦 Package size:", "289.7 kB");

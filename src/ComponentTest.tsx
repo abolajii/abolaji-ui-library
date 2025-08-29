@@ -11,7 +11,7 @@ import {
   Toggle,
   ProgressBar,
   LoadingSpinner,
-} from "abolaji-ui-components";
+} from "abolaji-ui-library";
 
 // Import icons for testing
 import { Search, User, Mail, Lock, Calendar, Phone } from "lucide-react";
@@ -24,9 +24,9 @@ const ComponentTest = () => {
         <p className="text-blue-800 text-sm">
           📦 <strong>Now importing from:</strong>{" "}
           <code className="bg-blue-100 px-1 rounded">
-            abolaji-ui-components
+            abolaji-ui-library
           </code>{" "}
-          (npm package v1.0.8)
+          (npm package v1.0.0)
         </p>
         <p className="text-green-700 text-xs mt-1">
           ✨ <strong>Auto-styled:</strong> CSS is automatically injected - no
@@ -177,9 +177,9 @@ const ComponentTest = () => {
         <p className="text-green-700">
           All components imported from{" "}
           <code className="bg-green-100 px-1 rounded">
-            abolaji-ui-components@1.0.8
+            abolaji-ui-library@1.0.0
           </code>
-          ! CSS styles are automatically injected - no manual setup required.
+          ! CSS styles need to be manually imported.
         </p>
         <ul className="mt-2 text-sm text-green-600">
           <li>
@@ -195,7 +195,7 @@ const ComponentTest = () => {
           <p className="text-xs text-green-600">
             <strong>🎯 Usage:</strong>{" "}
             <code>
-              import {`{Button, Input}`} from 'abolaji-ui-components';
+              import {`{Button, Input}`} from 'abolaji-ui-library';
             </code>
           </p>
         </div>

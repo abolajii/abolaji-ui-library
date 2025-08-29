@@ -1,5 +1,5 @@
 {
-  "name": "abolaji-ui-kit",
+  "name": "abolaji-ui-library",
   "version": "1.0.1",
   "type": "module",
   "description": "A comprehensive React UI component library with TypeScript support, featuring form controls, navigation, feedback components, and more",
@@ -24,9 +24,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/abolajii/abolaji-ui-kit.git"
+    "url": "https://github.com/abolajii/abolaji-ui-library.git"
   },
-  "homepage": "https://github.com/abolajii/abolaji-ui-kit#readme",
+  "homepage": "https://github.com/abolajii/abolaji-ui-library#readme",
   "peerDependencies": {
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"

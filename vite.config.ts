@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => {
       build: {
         lib: {
           entry: "./src/index.ts",
-          name: "abolaji-ui-components",
+          name: "abolaji-ui-library",
           fileName: "index",
           formats: ["es", "cjs"],
         },

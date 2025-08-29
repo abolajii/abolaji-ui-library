@@ -2,14 +2,15 @@
 
 ## 🎨 Including Styles in Your Project
 
-When you install `abolaji-ui-components` in your project, you need to include the CSS file to get the proper styling.
+When you install `abolaji-ui-library` in your project, you need to include the CSS file to get the proper styling.
 
 ### Method 1: Import CSS in your main application file
 
 ```javascript
-// In your main App.js, App.tsx, or index.js file
-import "abolaji-ui-components/styles.css";
-import { Button, Input, Alert } from "abolaji-ui-components";
+```js
+// Import the CSS first
+import "abolaji-ui-library/styles.css";
+import { Button, Input, Alert } from "abolaji-ui-library";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
 
 ```css
 /* In your main CSS file (e.g., index.css or App.css) */
-@import "abolaji-ui-components/styles.css";
+@import "abolaji-ui-library/styles.css";
 ```
 
 ### Method 3: Include in HTML (if using CDN or build tools)
@@ -34,7 +35,7 @@ function App() {
 <!-- In your HTML head -->
 <link
   rel="stylesheet"
-  href="node_modules/abolaji-ui-components/dist/index.css"
+  href="node_modules/abolaji-ui-library/dist/index.css"
 />
 ```
 
@@ -48,8 +49,8 @@ function App() {
 
 ```jsx
 // App.jsx
-import "abolaji-ui-components/styles.css"; // <- Essential!
-import { Input, Button, Alert, Card } from "abolaji-ui-components";
+import "abolaji-ui-library/styles.css"; // <- Essential!
+import { Input, Button, Alert, Card } from "abolaji-ui-library";
 import { Search, Mail } from "lucide-react";
 
 function App() {
@@ -81,7 +82,7 @@ function App() {
 ## 🎯 Troubleshooting
 
 **Problem**: Components look like plain HTML (no colors, borders, spacing)
-**Solution**: Make sure you've imported the CSS file: `import 'abolaji-ui-components/styles.css';`
+**Solution**: Make sure you've imported the CSS file: `import 'abolaji-ui-library/styles.css';`
 
 **Problem**: Build tools complain about CSS imports
 **Solution**: Ensure your bundler supports CSS imports (Vite, Webpack, etc. support this by default)

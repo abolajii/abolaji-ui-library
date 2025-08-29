@@ -1,8 +1,11 @@
-# 🚀 Abolaji UI Components
+# Abolaji UI Library
+
+A modern, customizable, and lightweight UI component library for React applications built with TypeScript and Tailwind CSS.
+
+[![npm version](https://badge.fury.io/js/abolaji-ui-library.svg)](https://badge.fury.io/js/abolaji-ui-library)
 
 A comprehensive, modern React UI component library built with TypeScript and Tailwind CSS. Features a complete set of form controls, navigation elements, feedback components, and interactive utilities designed for modern web applications.
 
-[![npm version](https://badge.fury.io/js/abolaji-ui-components.svg)](https://badge.fury.io/js/abolaji-ui-components)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18+-61DAFB.svg)](https://reactjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-Styled-38B2AC.svg)](https://tailwindcss.com/)
@@ -14,22 +17,22 @@ A comprehensive, modern React UI component library built with TypeScript and Tai
 ## 📦 Installation
 
 ```bash
-npm install abolaji-ui-components
+npm install abolaji-ui-library
 # or
-yarn add abolaji-ui-components
+yarn add abolaji-ui-library
 # or
-pnpm add abolaji-ui-components
+pnpm add abolaji-ui-library
 ```
 
-## 🎨 **Zero Configuration - Auto-Styled!**
+## 🎨 **Manual CSS Import**
 
-**✨ NEW: CSS styles are automatically injected!** No need to import any CSS files.
+**Import the CSS file to get proper styling for all components.**
 
 ## 🚀 Quick Start
 
 ```jsx
-// Just import and use - styles are automatically applied!
-import { Button, Input, Alert } from "abolaji-ui-components";
+import "abolaji-ui-library/index.css"; // Import styles
+import { Button, Input, Alert } from "abolaji-ui-library";
 import { Search } from "lucide-react";
 
 function App() {
@@ -45,9 +48,9 @@ function App() {
 
 ### 💡 How it works:
 
-- **Automatic styling**: Styles are injected into the `<head>` when you import any component
-- **Zero configuration**: No CSS imports needed
-- **Lightweight**: Only essential styles are included (~8KB)
+- **Manual CSS import**: Import the CSS file once in your app entry point
+- **Zero dependencies**: No external dependencies beyond React
+- **Lightweight**: Only essential styles are included (~55KB CSS)
 - **No conflicts**: Styles are scoped and won't interfere with your existing CSS
 
 ## 🎯 Features
@@ -97,7 +100,7 @@ function App() {
 
 ```tsx
 import React, { useState } from "react";
-import { Input, Button, Alert } from "abolaji-ui-components";
+import { Input, Button, Alert } from "abolaji-ui-library";
 
 function MyForm() {
   const [name, setName] = useState("");
@@ -281,7 +284,7 @@ This library uses Tailwind CSS for styling. You can customize the appearance by:
 
 ```tsx
 import { useState } from "react";
-import { Input, Button, Alert } from "abolaji-ui-components";
+import { Input, Button, Alert } from "abolaji-ui-library";
 
 function ValidatedForm() {
   const [formData, setFormData] = useState({
@@ -365,7 +368,7 @@ All components are designed with mobile-first responsive principles:
 ````bash
 # Clone the repository
 ```bash
-git clone https://github.com/abolajii/abolaji-ui-components.git
+git clone https://github.com/abolajii/abolaji-ui-library.git
 
 # Install dependencies
 npm install
@@ -396,18 +399,18 @@ MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🔗 Links
 
-- [GitHub Repository](https://github.com/abolajii/abolaji-ui-components)
-- [NPM Package](https://www.npmjs.com/package/abolaji-ui-components)
-- [Documentation](https://github.com/abolajii/abolaji-ui-components#readme)
-- [Issues](https://github.com/abolajii/abolaji-ui-components/issues)
+- [GitHub Repository](https://github.com/abolajii/abolaji-ui-library)
+- [NPM Package](https://www.npmjs.com/package/abolaji-ui-library)
+- [Documentation](https://github.com/abolajii/abolaji-ui-library#readme)
+- [Issues](https://github.com/abolajii/abolaji-ui-library/issues)
 
 ## 📞 Support
 
 If you have any questions or need help, please:
 
-- Check the [documentation](https://github.com/abolajii/abolaji-ui-components#readme)
-- Search [existing issues](https://github.com/abolajii/abolaji-ui-components/issues)
-- Create a [new issue](https://github.com/abolajii/abolaji-ui-components/issues/new)
+- Check the [documentation](https://github.com/abolajii/abolaji-ui-library#readme)
+- Search [existing issues](https://github.com/abolajii/abolaji-ui-library/issues)
+- Create a [new issue](https://github.com/abolajii/abolaji-ui-library/issues/new)
 
 ---
 

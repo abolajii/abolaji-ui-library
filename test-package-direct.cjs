@@ -2,10 +2,10 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔍 Testing abolaji-ui-components@1.0.8...\n');
+console.log('🔍 Testing abolaji-ui-library@1.0.8...\n');
 
 // Check if package exists
-const packagePath = path.join(__dirname, 'node_modules/abolaji-ui-components');
+const packagePath = path.join(__dirname, 'node_modules/abolaji-ui-library');
 if (!fs.existsSync(packagePath)) {
   console.log('❌ Package not found!');
   process.exit(1);

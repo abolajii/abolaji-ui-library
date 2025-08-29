@@ -1,7 +1,7 @@
 // Real test of auto-injection by importing the actual package
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { Input, Button, Alert } from 'abolaji-ui-components';
+import { Input, Button, Alert } from 'abolaji-ui-library';
 
 function TestAutoInjection() {
   const [injectionStatus, setInjectionStatus] = React.useState('Checking...');

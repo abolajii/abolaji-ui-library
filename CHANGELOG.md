@@ -29,14 +29,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- **Package Name**: Renamed from "ajstory-ui-kit" to "abolaji-ui-kit"
+- **Package Name**: Renamed from "ajstory-ui-kit" to "abolaji-ui-library"
 - **Author**: Updated to "Abolaji"
 - **Repository**: All URLs updated to reflect new package name
 - **Documentation**: Complete rebranding across all files
 
 ### Added
 
-- Fresh start with "abolaji-ui-kit" package name
+- Fresh start with "abolaji-ui-library" package name
 - Updated import statements throughout documentation
 - New repository structure and branding
 
@@ -44,10 +44,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Updated package.json with new package name and repository URLs
 - Updated all documentation files (README, EXAMPLES, CHANGELOG)
-- Corrected all import examples to use "abolaji-ui-kit"
+- Corrected all import examples to use "abolaji-ui-library"
 - **Package Links**: Corrected NPM package links and repository URLs in package.json
 - **Documentation**: Updated README, CHANGELOG, and all documentation to reflect correct package name
-- **Import Examples**: Fixed all import examples in documentation to use `abolaji-ui-kit`
+- **Import Examples**: Fixed all import examples in documentation to use `abolaji-ui-library`
 
 ### Technical
 
@@ -123,10 +123,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Package Information
 
-- **Installation**: `npm install abolaji-ui-kit`
+- **Installation**: `npm install abolaji-ui-library`
 - **Bundle Size**: ~62KB (11.8KB gzipped)
 - **License**: MIT
-- **Repository**: https://github.com/abolajii/abolaji-ui-kit
+- **Repository**: https://github.com/abolajii/abolaji-ui-library
 
 ### Fixed
 

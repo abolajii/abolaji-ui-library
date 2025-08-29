@@ -20,7 +20,7 @@ import {
   Badge,
   ProgressBar,
   LoadingSpinner,
-} from "abolaji-ui-components";
+} from "abolaji-ui-library";
 import { Toast } from "../components/ui/Toast";
 
 // Type definitions
@@ -731,14 +731,14 @@ const AJStoryShowcase = () => {
             today!
           </p>
           <div className="bg-gray-100 rounded-lg p-4 mb-4">
-            <code className="text-sm">npm install abolaji-ui-components</code>
+            <code className="text-sm">npm install abolaji-ui-library</code>
           </div>
           <div className="flex justify-center space-x-4">
             <Button
               variant="primary"
               onClick={() =>
                 window.open(
-                  "https://www.npmjs.com/package/abolaji-ui-components",
+                  "https://www.npmjs.com/package/abolaji-ui-library",
                   "_blank"
                 )
               }
@@ -749,7 +749,7 @@ const AJStoryShowcase = () => {
               variant="secondary"
               onClick={() =>
                 window.open(
-                  "https://github.com/abolajii/abolaji-ui-components",
+                  "https://github.com/abolajii/abolaji-ui-library",
                   "_blank"
                 )
               }
@@ -805,7 +805,7 @@ const AJStoryShowcase = () => {
           <div className="bg-blue-50 p-3 rounded">
             <p className="text-sm text-blue-800">
               💡 <strong>Pro tip:</strong> This entire page is built using only
-              components from the abolaji-ui-components library!
+              components from the abolaji-ui-library library!
             </p>
           </div>
         </div>

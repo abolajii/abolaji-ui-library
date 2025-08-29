@@ -1,17 +1,17 @@
-# Abolaji UI Kit
+# Abolaji UI Library
 
 A comprehensive React UI component library with TypeScript support, featuring form controls, navigation, feedback components, and more.
 
 ## Installation
 
 ```bash
-npm install abolaji-ui-kit
+npm install abolaji-ui-library
 ```
 
 ## Usage
 
 ```tsx
-import { Button, Input, Card } from "abolaji-ui-kit";
+import { Button, Input, Card } from "abolaji-ui-library";
 
 function App() {
   return (
@@ -63,4 +63,4 @@ MIT
 
 ## Repository
 
-[GitHub](https://github.com/abolajii/abolaji-ui-kit)
+[GitHub](https://github.com/abolajii/abolaji-ui-library)

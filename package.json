@@ -1,6 +1,6 @@
 {
-  "name": "abolaji-ui-components",
-  "version": "1.0.9",
+  "name": "abolaji-ui-library",
+  "version": "1.0.0",
   "description": "A comprehensive React UI component library with TypeScript support, featuring form controls, navigation, feedback components, and more",
   "private": false,
   "type": "module",
@@ -40,11 +40,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/abolajii/abolaji-ui-components.git"
+    "url": "https://github.com/abolajii/abolaji-ui-library.git"
   },
-  "homepage": "https://github.com/abolajii/abolaji-ui-components#readme",
+  "homepage": "https://uikit.inabsolutions.com",
   "bugs": {
-    "url": "https://github.com/abolajii/abolaji-ui-components/issues"
+    "url": "https://github.com/abolajii/abolaji-ui-library/issues"
   },
   "scripts": {
     "dev": "vite",
@@ -59,7 +59,6 @@
     "react-dom": ">=18.0.0"
   },
   "dependencies": {
-    "abolaji-ui-components": "^1.0.8",
     "lucide-react": "^0.542.0"
   },
   "devDependencies": {
