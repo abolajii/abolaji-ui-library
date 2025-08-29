@@ -140,6 +140,7 @@ function MyForm() {
   value={value}
   onChange={handleChange}
   placeholder="Placeholder text"
+  helperText="Helpful guidance text"
   error="Error message"
   required
   disabled={false}
@@ -153,6 +154,7 @@ function MyForm() {
 - `value?: string | number` - Current value
 - `onChange?: (e: ChangeEvent) => void` - Change handler
 - `placeholder?: string` - Placeholder text
+- `helperText?: string` - Helper text to display below the input
 - `error?: string` - Error message to display
 - `required?: boolean` - Mark field as required
 - `disabled?: boolean` - Disable the input

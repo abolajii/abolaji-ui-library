@@ -1,22 +1,22 @@
-import resolve from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import typescript from '@rollup/plugin-typescript';
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import postcss from 'rollup-plugin-postcss';
-import dts from 'rollup-plugin-dts';
+import resolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
+import typescript from "@rollup/plugin-typescript";
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import postcss from "rollup-plugin-postcss";
+import dts from "rollup-plugin-dts";
 
 export default [
   {
-    input: 'src/index.ts',
+    input: "src/index.ts",
     output: [
       {
-        file: 'dist/index.js',
-        format: 'cjs',
+        file: "dist/index.js",
+        format: "cjs",
         sourcemap: true,
       },
       {
-        file: 'dist/index.esm.js',
-        format: 'esm',
+        file: "dist/index.esm.js",
+        format: "esm",
         sourcemap: true,
       },
     ],
@@ -25,26 +25,26 @@ export default [
       resolve(),
       commonjs(),
       typescript({
-        tsconfig: './tsconfig.json',
+        tsconfig: "./tsconfig.json",
         declaration: true,
-        declarationDir: 'dist',
+        declarationDir: "dist",
       }),
       postcss({
         config: {
-          path: './postcss.config.js',
+          path: "./postcss.config.js",
         },
-        extensions: ['.css'],
+        extensions: [".css"],
         minimize: true,
         inject: {
-          insertAt: 'top',
+          insertAt: "top",
         },
       }),
     ],
-    external: ['react', 'react-dom'],
+    external: ["react", "react-dom"],
   },
   {
-    input: 'dist/index.d.ts',
-    output: [{ file: 'dist/index.d.ts', format: 'esm' }],
+    input: "dist/index.d.ts",
+    output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
   },
 ];

@@ -17,10 +17,10 @@ function App() {
   return (
     <div>
       <Card>
-        <Input 
-          label="Email" 
-          value={email} 
-          onChange={setEmail} 
+        <Input
+          label="Email"
+          value={email}
+          onChange={setEmail}
           helperText="Enter your email address"
         />
         <Button variant="primary">Submit</Button>
