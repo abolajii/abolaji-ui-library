@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { User, Mail } from "lucide-react";
 import { Input } from "../components/ui/Input";
 import { Checkbox } from "../components/ui/Checkbox";
 import { Toggle } from "../components/ui/Toggle";
@@ -102,14 +103,14 @@ export default function StorybookPreview() {
                   placeholder="Enter text here..."
                   value=""
                   onChange={() => {}}
-                  icon="👤"
+                  icon={User}
                 />
                 <Input
                   label="Input with Error"
                   value="invalid-email"
                   error="Please enter a valid email address"
                   onChange={() => {}}
-                  icon="📧"
+                  icon={Mail}
                 />
                 <PasswordInput
                   label="Password"
@@ -475,7 +476,7 @@ export default function StorybookPreview() {
                 value={formData.name}
                 onChange={handleInputChange("name")}
                 error={errors.name}
-                icon="👤"
+                icon={User}
               />
 
               <Input
@@ -485,7 +486,7 @@ export default function StorybookPreview() {
                 value={formData.email}
                 onChange={handleInputChange("email")}
                 error={errors.email}
-                icon="📧"
+                icon={Mail}
               />
 
               <Select

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Search, Mail } from "lucide-react";
 import { Input } from "../components/ui/Input";
 import { Textarea } from "../components/ui/TextArea";
 import { Select } from "../components/ui/Select";
@@ -1102,30 +1103,43 @@ function MyComponent() {
                         <Input
                           label="Basic Input"
                           placeholder="Enter text..."
+                          value=""
+                          onChange={() => {}}
                         />
                         <Input
                           label="With Icon"
                           placeholder="Search..."
-                          icon="🔍"
+                          value=""
+                          onChange={() => {}}
+                          icon={Search}
                         />
                         <Input
                           label="Email"
                           type="email"
                           placeholder="user@example.com"
+                          value=""
+                          onChange={() => {}}
+                          icon={Mail}
                         />
                         <Input
                           label="Required Field"
                           placeholder="This field is required"
+                          value=""
+                          onChange={() => {}}
                           required
                         />
                         <Input
                           label="With Error"
                           placeholder="Invalid input"
+                          value=""
+                          onChange={() => {}}
                           error="This field is required"
                         />
                         <Input
                           label="Disabled"
                           placeholder="Disabled input"
+                          value=""
+                          onChange={() => {}}
                           disabled
                         />
                       </div>

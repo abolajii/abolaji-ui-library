@@ -83,7 +83,7 @@ const colorThemes = {
     text: "text-gray-600",
   },
 };
-export const InputField = React.memo<InputFieldProps>(
+export const Input = React.memo<InputFieldProps>(
   ({
     type = "text",
     placeholder,
@@ -149,7 +149,7 @@ export const InputField = React.memo<InputFieldProps>(
 
     // Build class names
     const baseInputClass = `
-    block w-full rounded-xl transition-all duration-200
+    block w-full border rounded-xl transition-all duration-200
     focus:outline-none focus:ring-2 focus:ring-opacity-50
     disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed
   `;
@@ -305,3 +305,5 @@ export const InputField = React.memo<InputFieldProps>(
     );
   }
 );
+
+Input.displayName = "Input";

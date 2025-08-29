@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Search, Mail } from "lucide-react";
 import { Input } from "../components/ui/Input";
 import { Textarea } from "../components/ui/TextArea";
 import { Select } from "../components/ui/Select";
@@ -689,30 +690,44 @@ function MyComponent() {
                         <Input
                           label="Basic Input"
                           placeholder="Enter text..."
+                          value=""
+                          onChange={() => {}}
                         />
                         <Input
                           label="With Icon"
                           placeholder="Search..."
-                          icon="🔍"
+                          value=""
+                          onChange={() => {}}
+                          icon={Search}
                         />
                         <Input
                           label="Email"
                           type="email"
                           placeholder="user@example.com"
+                          value=""
+                          onChange={() => {}}
+                          icon={Mail}
+                          helperText="Please enter a valid email address."
                         />
                         <Input
                           label="Required Field"
                           placeholder="This field is required"
+                          value=""
+                          onChange={() => {}}
                           required
                         />
                         <Input
                           label="With Error"
                           placeholder="Invalid input"
+                          value=""
+                          onChange={() => {}}
                           error="This field is required"
                         />
                         <Input
                           label="Disabled"
                           placeholder="Disabled input"
+                          value=""
+                          onChange={() => {}}
                           disabled
                         />
                       </div>
@@ -723,6 +738,7 @@ function MyComponent() {
                     <h4 className="text-lg font-semibold">Usage Example</h4>
                     <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
                       <pre>{`import { Input } from "abolaji-ui-kit";
+import { Mail, Search } from "lucide-react";
 
 function MyForm() {
   const [email, setEmail] = useState('');
@@ -738,13 +754,15 @@ function MyForm() {
         placeholder="Enter your email"
         error={error}
         required
-        icon="📧"
+        icon={Mail}
       />
       
       <Input
         label="Search"
         placeholder="Search products..."
-        icon="🔍"
+        value=""
+        onChange={() => {}}
+        icon={Search}
         onKeyPress={(e) => {
           if (e.key === 'Enter') handleSearch();
         }}
@@ -844,6 +862,20 @@ function MyForm() {
                             </td>
                             <td className="px-6 py-4 text-sm text-gray-500">
                               Error message to display
+                            </td>
+                          </tr>
+                          <tr>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                              helperText
+                            </td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                              string
+                            </td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                              -
+                            </td>
+                            <td className="px-6 py-4 text-sm text-gray-500">
+                              Helper text to display below the input
                             </td>
                           </tr>
                           <tr>
