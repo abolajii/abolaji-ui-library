@@ -1,77 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Real Auto-Injection Test</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="root"></div>
-    
+
     <script type="module">
-        // Import and test the actual published package
-        import React from 'https://esm.sh/react@18';
-        import { createRoot } from 'https://esm.sh/react-dom@18/client';
-        
-        // This should auto-inject styles
-        import { Input, Button, Alert } from './node_modules/abolaji-ui-library/dist/index.js';
-        
-        function TestApp() {
-            const [status, setStatus] = React.useState('Testing auto-injection...');
-            
-            React.useEffect(() => {
-                setTimeout(() => {
-                    const stylesEl = document.getElementById('abolaji-ui-styles');
-                    if (stylesEl) {
-                        setStatus('✅ SUCCESS! Auto-injection working - styles found in DOM');
-                        console.log('✅ Found auto-injected styles:', stylesEl);
-                        console.log('CSS length:', stylesEl.textContent.length, 'characters');
-                    } else {
-                        setStatus('❌ FAILED! Auto-injection not working - no styles found');
-                        console.log('❌ No auto-injected styles found');
-                        console.log('All styles in DOM:', document.querySelectorAll('style, link[rel="stylesheet"]'));
-                    }
-                }, 200);
-            }, []);
-            
-            return React.createElement('div', { 
-                className: 'p-8 space-y-4' 
-            }, [
-                React.createElement('h1', { 
-                    key: 'title',
-                    className: 'text-2xl font-bold text-blue-600' 
-                }, 'Auto-Injection Test v1.0.8'),
-                
-                React.createElement('div', { 
-                    key: 'status',
-                    className: 'p-4 bg-blue-50 border border-blue-200 rounded-lg' 
-                }, React.createElement('p', { 
-                    className: 'text-blue-800 font-medium' 
-                }, status)),
-                
-                React.createElement('div', { 
-                    key: 'components',
-                    className: 'space-y-4' 
-                }, [
-                    React.createElement(Input, { 
-                        key: 'input',
-                        placeholder: 'Input should be styled!' 
-                    }),
-                    React.createElement(Button, { 
-                        key: 'button',
-                        variant: 'primary' 
-                    }, 'Button should be styled!'),
-                    React.createElement(Alert, { 
-                        key: 'alert',
-                        variant: 'success' 
-                    }, 'Alert should be styled!')
-                ])
-            ]);
-        }
-        
-        const container = document.getElementById('root');
-        const root = createRoot(container);
-        root.render(React.createElement(TestApp));
+      // Import and test the actual published package
+      import React from "https://esm.sh/react@18";
+      import { createRoot } from "https://esm.sh/react-dom@18/client";
+
+      // This should auto-inject styles
+      import {
+        Input,
+        Button,
+        Alert,
+      } from "./node_modules/abolaji-ui-library/dist/index.js";
+
+      function TestApp() {
+        const [status, setStatus] = React.useState("Testing auto-injection...");
+
+        React.useEffect(() => {
+          setTimeout(() => {
+            const stylesEl = document.getElementById("abolaji-ui-styles");
+            if (stylesEl) {
+              setStatus(
+                "✅ SUCCESS! Auto-injection working - styles found in DOM"
+              );
+              console.log("✅ Found auto-injected styles:", stylesEl);
+              console.log(
+                "CSS length:",
+                stylesEl.textContent.length,
+                "characters"
+              );
+            } else {
+              setStatus(
+                "❌ FAILED! Auto-injection not working - no styles found"
+              );
+              console.log("❌ No auto-injected styles found");
+              console.log(
+                "All styles in DOM:",
+                document.querySelectorAll('style, link[rel="stylesheet"]')
+              );
+            }
+          }, 200);
+        }, []);
+
+        return React.createElement(
+          "div",
+          {
+            className: "p-8 space-y-4",
+          },
+          [
+            React.createElement(
+              "h1",
+              {
+                key: "title",
+                className: "text-2xl font-bold text-blue-600",
+              },
+              "Auto-Injection Test v1.0.8"
+            ),
+
+            React.createElement(
+              "div",
+              {
+                key: "status",
+                className: "p-4 bg-blue-50 border border-blue-200 rounded-lg",
+              },
+              React.createElement(
+                "p",
+                {
+                  className: "text-blue-800 font-medium",
+                },
+                status
+              )
+            ),
+
+            React.createElement(
+              "div",
+              {
+                key: "components",
+                className: "space-y-4",
+              },
+              [
+                React.createElement(Input, {
+                  key: "input",
+                  placeholder: "Input should be styled!",
+                }),
+                React.createElement(
+                  Button,
+                  {
+                    key: "button",
+                    variant: "primary",
+                  },
+                  "Button should be styled!"
+                ),
+                React.createElement(
+                  Alert,
+                  {
+                    key: "alert",
+                    variant: "success",
+                  },
+                  "Alert should be styled!"
+                ),
+              ]
+            ),
+          ]
+        );
+      }
+
+      const container = document.getElementById("root");
+      const root = createRoot(container);
+      root.render(React.createElement(TestApp));
     </script>
-</body>
+  </body>
 </html>

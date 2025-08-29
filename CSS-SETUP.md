@@ -6,7 +6,7 @@ When you install `abolaji-ui-library` in your project, you need to include the C
 
 ### Method 1: Import CSS in your main application file
 
-```javascript
+````javascript
 ```js
 // Import the CSS first
 import "abolaji-ui-library/styles.css";
@@ -20,7 +20,7 @@ function App() {
     </div>
   );
 }
-```
+````
 
 ### Method 2: Import in your CSS file
 
@@ -33,10 +33,7 @@ function App() {
 
 ```html
 <!-- In your HTML head -->
-<link
-  rel="stylesheet"
-  href="node_modules/abolaji-ui-library/dist/index.css"
-/>
+<link rel="stylesheet" href="node_modules/abolaji-ui-library/dist/index.css" />
 ```
 
 ## ⚠️ Important Notes

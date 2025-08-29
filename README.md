@@ -365,9 +365,8 @@ All components are designed with mobile-first responsive principles:
 
 ### Building from Source
 
-````bash
-# Clone the repository
 ```bash
+# Clone the repository
 git clone https://github.com/abolajii/abolaji-ui-library.git
 
 # Install dependencies
@@ -381,7 +380,7 @@ npm run build
 
 # Build library package
 npm run build:lib
-````
+```
 
 ## 🤝 Contributing
 

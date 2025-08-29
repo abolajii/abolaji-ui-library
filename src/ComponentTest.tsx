@@ -23,9 +23,7 @@ const ComponentTest = () => {
       <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded">
         <p className="text-blue-800 text-sm">
           📦 <strong>Now importing from:</strong>{" "}
-          <code className="bg-blue-100 px-1 rounded">
-            abolaji-ui-library
-          </code>{" "}
+          <code className="bg-blue-100 px-1 rounded">abolaji-ui-library</code>{" "}
           (npm package v1.0.0)
         </p>
         <p className="text-green-700 text-xs mt-1">
@@ -194,9 +192,7 @@ const ComponentTest = () => {
         <div className="mt-3 p-2 bg-white rounded border border-green-100">
           <p className="text-xs text-green-600">
             <strong>🎯 Usage:</strong>{" "}
-            <code>
-              import {`{Button, Input}`} from 'abolaji-ui-library';
-            </code>
+            <code>import {`{Button, Input}`} from 'abolaji-ui-library';</code>
           </p>
         </div>
       </div>
