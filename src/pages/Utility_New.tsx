@@ -196,36 +196,9 @@ export default function StorybookPreview() {
                   </label>
                   <ProgressBar value={progressValue} showLabel={true} />
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    ⏳ Loading Spinners
-                  </label>
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-4">
-                      <LoadingSpinner size="small" variant="primary" />
-                      <span className="text-sm text-gray-600">
-                        Small spinner
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <LoadingSpinner size="medium" variant="primary" />
-                      <span className="text-sm text-gray-600">
-                        Medium spinner
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <LoadingSpinner size="large" variant="gray" />
-                      <span className="text-sm text-gray-600">
-                        Large spinner
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-4 bg-gray-800 p-2 rounded">
-                      <LoadingSpinner size="medium" variant="white" />
-                      <span className="text-sm text-white">
-                        White spinner on dark background
-                      </span>
-                    </div>
-                  </div>
+                <div className="flex items-center gap-2">
+                  <LoadingSpinner size="small" />
+                  <span className="text-sm text-gray-600">Processing...</span>
                 </div>
               </div>
             </Card>
