@@ -213,10 +213,10 @@ export const Input = React.memo<InputFieldProps>(
     const inputType = type === "password" && showPassword ? "text" : type;
 
     return (
-      <div className={`space-y-1 ${containerClassName}`}>
+      <div className={`${containerClassName}`} style={{ display: 'block' }}>
         {/* Label */}
         {label && (
-          <label className={labelClass}>
+          <label className={labelClass} style={{ display: 'block', marginBottom: '0.5rem' }}>
             {label}
             {required && (
               <span
@@ -233,15 +233,25 @@ export const Input = React.memo<InputFieldProps>(
         )}
 
         {/* Input Container */}
-        <div className="relative">
+        <div className="relative" style={{ position: 'relative' }}>
           {/* Left Icon */}
           {Icon && iconPosition === "left" && (
             <div
               className={`absolute inset-y-0 left-0 ${
                 size === "sm" ? "pl-2" : size === "lg" ? "pl-4" : "pl-3"
               } flex items-center pointer-events-none`}
+              style={{ 
+                position: 'absolute',
+                top: 0,
+                bottom: 0,
+                left: 0,
+                display: 'flex',
+                alignItems: 'center',
+                pointerEvents: 'none',
+                zIndex: 10
+              }}
             >
-              <Icon className={iconClass} />
+              <Icon className={iconClass} aria-hidden="true" />
             </div>
           )}
 
@@ -256,6 +266,7 @@ export const Input = React.memo<InputFieldProps>(
             disabled={disabled}
             required={required}
             className={inputClassName}
+            style={{ position: 'relative', zIndex: 5 }}
           />
 
           {/* Right Icon or Toggle */}
@@ -265,6 +276,15 @@ export const Input = React.memo<InputFieldProps>(
               className={`absolute inset-y-0 right-0 ${
                 size === "sm" ? "pr-2" : size === "lg" ? "pr-4" : "pr-3"
               } flex items-center`}
+              style={{ 
+                position: 'absolute',
+                top: 0,
+                bottom: 0,
+                right: 0,
+                display: 'flex',
+                alignItems: 'center',
+                zIndex: 10
+              }}
             >
               {showToggle && type === "password" ? (
                 <button
@@ -280,7 +300,7 @@ export const Input = React.memo<InputFieldProps>(
                   )}
                 </button>
               ) : Icon && iconPosition === "right" ? (
-                <Icon className={iconClass} />
+                <Icon className={iconClass} aria-hidden="true" />
               ) : null}
             </div>
           ) : null}
@@ -288,9 +308,9 @@ export const Input = React.memo<InputFieldProps>(
 
         {/* Helper Text or Error */}
         {error ? (
-          <p className={errorTextClass}>{error}</p>
+          <p className={errorTextClass} style={{ marginTop: '0.25rem' }}>{error}</p>
         ) : helperText ? (
-          <p className={helperTextClass}>{helperText}</p>
+          <p className={helperTextClass} style={{ marginTop: '0.25rem' }}>{helperText}</p>
         ) : null}
       </div>
     );
