@@ -21,6 +21,35 @@ yarn add abolaji-ui-components
 pnpm add abolaji-ui-components
 ```
 
+## 🎨 **Zero Configuration - Auto-Styled!**
+
+**✨ NEW: CSS styles are automatically injected!** No need to import any CSS files.
+
+## 🚀 Quick Start
+
+```jsx
+// Just import and use - styles are automatically applied!
+import { Button, Input, Alert } from "abolaji-ui-components";
+import { Search } from "lucide-react";
+
+function App() {
+  return (
+    <div>
+      <Input placeholder="Search..." icon={Search} iconPosition="left" />
+      <Button variant="primary">Click me</Button>
+      <Alert variant="success">Ready to go! 🎉</Alert>
+    </div>
+  );
+}
+```
+
+### 💡 How it works:
+
+- **Automatic styling**: Styles are injected into the `<head>` when you import any component
+- **Zero configuration**: No CSS imports needed
+- **Lightweight**: Only essential styles are included (~8KB)
+- **No conflicts**: Styles are scoped and won't interfere with your existing CSS
+
 ## 🎯 Features
 
 - ✅ **Fully TypeScript**: Complete type safety and IntelliSense support
@@ -333,7 +362,7 @@ All components are designed with mobile-first responsive principles:
 
 ### Building from Source
 
-```bash
+````bash
 # Clone the repository
 ```bash
 git clone https://github.com/abolajii/abolaji-ui-components.git
@@ -349,7 +378,7 @@ npm run build
 
 # Build library package
 npm run build:lib
-```
+````
 
 ## 🤝 Contributing
 

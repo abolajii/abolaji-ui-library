@@ -1,4 +1,8 @@
 // Abolaji UI Components - Main Export File
+
+// Auto-inject styles when components are imported
+import "./inject-styles";
+
 // Form Controls
 export { Input } from "./components/ui/Input";
 export { Textarea } from "./components/ui/TextArea";

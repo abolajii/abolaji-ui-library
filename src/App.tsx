@@ -5,11 +5,12 @@ import { Button } from "./components/ui/Button";
 import Testing from "./pages/Testing";
 import AbolajiShowcase from "./pages/AbolajiShowcase";
 import StorybookPreview from "./pages/Utility";
+import ComponentTest from "./ComponentTest";
 
 const App = () => {
-  const [currentView, setCurrentView] = useState<"showcase" | "utility">(
-    "showcase"
-  );
+  const [currentView, setCurrentView] = useState<
+    "showcase" | "utility" | "test"
+  >("test");
 
   return (
     <div>
@@ -29,12 +30,25 @@ const App = () => {
         >
           🛠️ Utility
         </Button>
+        <Button
+          variant={currentView === "test" ? "primary" : "secondary"}
+          size="small"
+          onClick={() => setCurrentView("test")}
+        >
+          🧪 Test
+        </Button>
       </div>
 
       <Testing />
 
       {/* Content */}
-      {currentView === "showcase" ? <AbolajiShowcase /> : <StorybookPreview />}
+      {currentView === "showcase" ? (
+        <AbolajiShowcase />
+      ) : currentView === "utility" ? (
+        <StorybookPreview />
+      ) : (
+        <ComponentTest />
+      )}
     </div>
   );
 };

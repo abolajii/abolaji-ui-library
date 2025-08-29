@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => {
       build: {
         lib: {
           entry: "./src/index.ts",
-          name: "AJStoryUIComponents",
+          name: "abolaji-ui-components",
           fileName: "index",
           formats: ["es", "cjs"],
         },
@@ -28,6 +28,7 @@ export default defineConfig(({ mode }) => {
         },
         sourcemap: true,
         emptyOutDir: false,
+        cssCodeSplit: false,
       },
     };
   }

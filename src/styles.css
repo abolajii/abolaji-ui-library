@@ -1,0 +1,24 @@
+/* Abolaji UI Components - Compiled Styles */
+/* Include all Tailwind utilities used by the components */
+
+@import "tailwindcss";
+
+/* Component-specific base styles */
+.abolaji-ui {
+  /* Base reset for components */
+  box-sizing: border-box;
+}
+
+.abolaji-ui *,
+.abolaji-ui *::before,
+.abolaji-ui *::after {
+  box-sizing: inherit;
+}
+
+/* Ensure consistent font rendering */
+.abolaji-ui {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
