@@ -1,13 +1,4 @@
-import {
-  Eye,
-  EyeOff,
-  //   Mail,
-  //   Lock,
-  //   User,
-  //   Search,
-  //   Phone,
-  //   Calendar,
-} from "lucide-react";
+import { Eye, EyeOff } from "lucide-react";
 
 import React, { useState } from "react";
 
