@@ -642,7 +642,7 @@ const AbolajiShowcase = () => {
                         <span>Install via npm</span>
                       </div>
                       <div className="text-white">
-                        npm install abolaji-ui-kit
+                        npm install abolaji-ui-components
                       </div>
 
                       <div className="flex items-center gap-2 mb-2 mt-4">
@@ -650,7 +650,7 @@ const AbolajiShowcase = () => {
                         <span>Import components</span>
                       </div>
                       <div className="text-white">
-                        {`import { Button, Input, Card } from "abolaji-ui-kit";`}
+                        {`import { Button, Input, Card } from "abolaji-ui-components";`}
                       </div>
 
                       <div className="flex items-center gap-2 mb-2 mt-4">
@@ -750,7 +750,7 @@ const AbolajiShowcase = () => {
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold">Usage Example</h4>
                     <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
-                      <pre>{`import { Alert } from "abolaji-ui-kit";
+                      <pre>{`import { Alert } from "abolaji-ui-components";
 
 function MyComponent() {
   return (
@@ -936,7 +936,7 @@ function MyComponent() {
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold">Usage Example</h4>
                     <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
-                      <pre>{`import { Button } from "abolaji-ui-kit";
+                      <pre>{`import { Button } from "abolaji-ui-components";
 
 function MyComponent() {
   return (
@@ -1149,7 +1149,7 @@ function MyComponent() {
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold">Usage Example</h4>
                     <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
-                      <pre>{`import { Input } from "abolaji-ui-kit";
+                      <pre>{`import { Input } from "abolaji-ui-components";
 
 function MyForm() {
   const [email, setEmail] = useState('');
@@ -1361,7 +1361,7 @@ function MyForm() {
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold">Usage Example</h4>
                     <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
-                      <pre>{`import { FileUpload } from "abolaji-ui-kit";
+                      <pre>{`import { FileUpload } from "abolaji-ui-components";
 
 function MyForm() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -1590,7 +1590,7 @@ function MyForm() {
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold">Usage Example</h4>
                     <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
-                      <pre>{`import { Badge } from "abolaji-ui-kit";
+                      <pre>{`import { Badge } from "abolaji-ui-components";
 
 function UserProfile() {
   return (
@@ -1803,7 +1803,7 @@ function UserProfile() {
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold">Usage Example</h4>
                     <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
-                      <pre>{`import { ProgressBar } from "abolaji-ui-kit";
+                      <pre>{`import { ProgressBar } from "abolaji-ui-components";
 
 function UploadProgress() {
   const [progress, setProgress] = useState(0);
@@ -2019,7 +2019,7 @@ function UploadProgress() {
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold">Usage Example</h4>
                     <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
-                      <pre>{`import { LoadingSpinner } from "abolaji-ui-kit";
+                      <pre>{`import { LoadingSpinner } from "abolaji-ui-components";
 
 function DataTable() {
   const [loading, setLoading] = useState(true);
@@ -2217,7 +2217,7 @@ function DataTable() {
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold">Usage Example</h4>
                     <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
-                      <pre>{`import { Card } from "abolaji-ui-kit";
+                      <pre>{`import { Card } from "abolaji-ui-components";
 
 function Dashboard() {
   return (
@@ -2399,7 +2399,7 @@ function Dashboard() {
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold">Usage Example</h4>
                     <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
-                      <pre>{`import { Select } from "abolaji-ui-kit";
+                      <pre>{`import { Select } from "abolaji-ui-components";
 
 function SettingsForm() {
   const [country, setCountry] = useState('');
@@ -2617,7 +2617,7 @@ function SettingsForm() {
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold">Usage Example</h4>
                     <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
-                      <pre>{`import { MultiSelect } from "abolaji-ui-kit";
+                      <pre>{`import { MultiSelect } from "abolaji-ui-components";
 
 function SkillsForm() {
   const [selectedSkills, setSelectedSkills] = useState([]);
@@ -2878,7 +2878,7 @@ function SkillsForm() {
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold">Usage Example</h4>
                     <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
-                      <pre>{`import { Checkbox } from "abolaji-ui-kit";
+                      <pre>{`import { Checkbox } from "abolaji-ui-components";
 
 function PreferencesForm() {
   const [preferences, setPreferences] = useState({
@@ -3150,7 +3150,7 @@ function PreferencesForm() {
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold">Usage Example</h4>
                     <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
-                      <pre>{`import { RadioGroup } from "abolaji-ui-kit";
+                      <pre>{`import { RadioGroup } from "abolaji-ui-components";
 
 function SubscriptionForm() {
   const [plan, setPlan] = useState('pro');
@@ -3447,7 +3447,7 @@ function SubscriptionForm() {
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold">Usage Example</h4>
                     <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
-                      <pre>{`import { Toggle } from "abolaji-ui-kit";
+                      <pre>{`import { Toggle } from "abolaji-ui-components";
 
 function SettingsPanel() {
   const [settings, setSettings] = useState({
@@ -3681,7 +3681,7 @@ function SettingsPanel() {
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold">Usage Example</h4>
                     <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
-                      <pre>{`import { Textarea } from "abolaji-ui-kit";
+                      <pre>{`import { Textarea } from "abolaji-ui-components";
 
 function FeedbackForm() {
   const [feedback, setFeedback] = useState('');
@@ -3962,7 +3962,7 @@ function FeedbackForm() {
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold">Usage Example</h4>
                     <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
-                      <pre>{`import { PasswordInput } from "abolaji-ui-kit";
+                      <pre>{`import { PasswordInput } from "abolaji-ui-components";
 
 function RegisterForm() {
   const [password, setPassword] = useState('');
@@ -4271,7 +4271,7 @@ function RegisterForm() {
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold">Usage Example</h4>
                     <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
-                      <pre>{`import { RangeSlider } from "abolaji-ui-kit";
+                      <pre>{`import { RangeSlider } from "abolaji-ui-components";
 
 function PricingSettings() {
   const [budget, setBudget] = useState(500);
@@ -4542,7 +4542,7 @@ function PricingSettings() {
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold">Usage Example</h4>
                     <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
-                      <pre>{`import { DatePicker } from "abolaji-ui-kit";
+                      <pre>{`import { DatePicker } from "abolaji-ui-components";
 
 function BookingForm() {
   const [checkIn, setCheckIn] = useState('');
@@ -4856,7 +4856,7 @@ function BookingForm() {
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold">Usage Example</h4>
                     <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
-                      <pre>{`import { Tabs } from "abolaji-ui-kit";
+                      <pre>{`import { Tabs } from "abolaji-ui-components";
 
 function ProductDetails() {
   const [activeTab, setActiveTab] = useState('overview');
@@ -5111,7 +5111,7 @@ function ProductDetails() {
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold">Usage Example</h4>
                     <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
-                      <pre>{`import { Modal, Button } from "abolaji-ui-kit";
+                      <pre>{`import { Modal, Button } from "abolaji-ui-components";
 
 function UserManagement() {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -5443,7 +5443,7 @@ function UserManagement() {
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold">Usage Example</h4>
                     <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
-                      <pre>{`import { Tooltip } from "abolaji-ui-kit";
+                      <pre>{`import { Tooltip } from "abolaji-ui-components";
 
 function HelpfulInterface() {
   return (
@@ -5816,7 +5816,7 @@ function HelpfulInterface() {
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold">Usage Example</h4>
                     <div className="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
-                      <pre>{`import { Toast, useToast } from "abolaji-ui-kit";
+                      <pre>{`import { Toast, useToast } from "abolaji-ui-components";
 
 function App() {
   const { addToast, toasts, removeToast } = useToast();
@@ -6077,14 +6077,14 @@ function App() {
             today!
           </p>
           <div className="bg-gray-100 rounded-lg p-4 mb-4">
-            <code className="text-sm">npm install abolaji-ui-kit</code>
+            <code className="text-sm">npm install abolaji-ui-components</code>
           </div>
           <div className="flex justify-center space-x-4">
             <Button
               variant="primary"
               onClick={() =>
                 window.open(
-                  "https://www.npmjs.com/package/abolaji-ui-kit",
+                  "https://www.npmjs.com/package/abolaji-ui-components",
                   "_blank"
                 )
               }
@@ -6095,7 +6095,7 @@ function App() {
               variant="secondary"
               onClick={() =>
                 window.open(
-                  "https://github.com/abolajii/abolaji-ui-kit",
+                  "https://github.com/abolajii/abolaji-ui-components",
                   "_blank"
                 )
               }
@@ -6151,7 +6151,7 @@ function App() {
           <div className="bg-blue-50 p-3 rounded">
             <p className="text-sm text-blue-800">
               💡 <strong>Pro tip:</strong> This entire page is built using only
-              components from the abolaji-ui-kit library!
+              components from the abolaji-ui-components library!
             </p>
           </div>
         </div>

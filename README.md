@@ -1,8 +1,8 @@
-# 🚀 Abolaji UI Kit
+# 🚀 Abolaji UI Components
 
 A comprehensive, modern React UI component library built with TypeScript and Tailwind CSS. Features a complete set of form controls, navigation elements, feedback components, and interactive utilities designed for modern web applications.
 
-[![npm version](https://badge.fury.io/js/abolaji-ui-kit.svg)](https://badge.fury.io/js/abolaji-ui-kit)
+[![npm version](https://badge.fury.io/js/abolaji-ui-components.svg)](https://badge.fury.io/js/abolaji-ui-components)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-18+-61DAFB.svg)](https://reactjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-Styled-38B2AC.svg)](https://tailwindcss.com/)
@@ -14,11 +14,11 @@ A comprehensive, modern React UI component library built with TypeScript and Tai
 ## 📦 Installation
 
 ```bash
-npm install abolaji-ui-kit
+npm install abolaji-ui-components
 # or
-yarn add abolaji-ui-kit
+yarn add abolaji-ui-components
 # or
-pnpm add abolaji-ui-kit
+pnpm add abolaji-ui-components
 ```
 
 ## 🎯 Features
@@ -68,7 +68,7 @@ pnpm add abolaji-ui-kit
 
 ```tsx
 import React, { useState } from "react";
-import { Input, Button, Alert } from "abolaji-ui-kit";
+import { Input, Button, Alert } from "abolaji-ui-components";
 
 function MyForm() {
   const [name, setName] = useState("");
@@ -252,7 +252,7 @@ This library uses Tailwind CSS for styling. You can customize the appearance by:
 
 ```tsx
 import { useState } from "react";
-import { Input, Button, Alert } from "abolaji-ui-kit";
+import { Input, Button, Alert } from "abolaji-ui-components";
 
 function ValidatedForm() {
   const [formData, setFormData] = useState({
@@ -335,7 +335,8 @@ All components are designed with mobile-first responsive principles:
 
 ```bash
 # Clone the repository
-git clone https://github.com/abolajii/abolaji-ui-kit.git
+```bash
+git clone https://github.com/abolajii/abolaji-ui-components.git
 
 # Install dependencies
 npm install
@@ -366,18 +367,18 @@ MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🔗 Links
 
-- [GitHub Repository](https://github.com/abolajii/abolaji-ui-kit)
-- [NPM Package](https://www.npmjs.com/package/abolaji-ui-kit)
-- [Documentation](https://github.com/abolajii/abolaji-ui-kit#readme)
-- [Issues](https://github.com/abolajii/abolaji-ui-kit/issues)
+- [GitHub Repository](https://github.com/abolajii/abolaji-ui-components)
+- [NPM Package](https://www.npmjs.com/package/abolaji-ui-components)
+- [Documentation](https://github.com/abolajii/abolaji-ui-components#readme)
+- [Issues](https://github.com/abolajii/abolaji-ui-components/issues)
 
 ## 📞 Support
 
 If you have any questions or need help, please:
 
-- Check the [documentation](https://github.com/abolajii/abolaji-ui-kit#readme)
-- Search [existing issues](https://github.com/abolajii/abolaji-ui-kit/issues)
-- Create a [new issue](https://github.com/abolajii/abolaji-ui-kit/issues/new)
+- Check the [documentation](https://github.com/abolajii/abolaji-ui-components#readme)
+- Search [existing issues](https://github.com/abolajii/abolaji-ui-components/issues)
+- Create a [new issue](https://github.com/abolajii/abolaji-ui-components/issues/new)
 
 ---
 
