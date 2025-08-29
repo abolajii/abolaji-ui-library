@@ -1,6 +1,6 @@
 {
   "name": "abolaji-ui-components",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A comprehensive React UI component library with TypeScript support, featuring form controls, navigation, feedback components, and more",
   "private": false,
   "type": "module",
