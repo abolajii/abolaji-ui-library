@@ -116,32 +116,29 @@ export const Input = React.memo<InputFieldProps>(
       sm: {
         input: "py-2 text-sm",
         icon: "h-4 w-4",
-        padding:
-          Icon && iconPosition === "left"
-            ? "pl-8"
-            : showToggle
-            ? "pr-8"
-            : "px-3",
+        padding: Icon && iconPosition === "left" 
+          ? "pl-8 pr-3" 
+          : showToggle || (Icon && iconPosition === "right")
+          ? "pl-3 pr-8" 
+          : "px-3",
       },
       md: {
         input: "py-3 text-sm",
         icon: "h-5 w-5",
-        padding:
-          Icon && iconPosition === "left"
-            ? "pl-10"
-            : showToggle
-            ? "pr-10"
-            : "px-3",
+        padding: Icon && iconPosition === "left" 
+          ? "pl-10 pr-3" 
+          : showToggle || (Icon && iconPosition === "right")
+          ? "pl-3 pr-10" 
+          : "px-3",
       },
       lg: {
         input: "py-4 text-base",
         icon: "h-6 w-6",
-        padding:
-          Icon && iconPosition === "left"
-            ? "pl-12"
-            : showToggle
-            ? "pr-12"
-            : "px-4",
+        padding: Icon && iconPosition === "left" 
+          ? "pl-12 pr-4" 
+          : showToggle || (Icon && iconPosition === "right")
+          ? "pl-4 pr-12" 
+          : "px-4",
       },
     };
 
@@ -150,7 +147,7 @@ export const Input = React.memo<InputFieldProps>(
     // Build class names
     const baseInputClass = `
     block w-full border rounded-xl transition-all duration-200
-    focus:outline-none focus:ring-2 focus:ring-opacity-50
+    focus:outline-none focus:ring-1 focus:ring-opacity-30
     disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed
   `;
 
