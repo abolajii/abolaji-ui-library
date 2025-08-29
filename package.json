@@ -59,6 +59,7 @@
     "react-dom": ">=18.0.0"
   },
   "dependencies": {
+    "abolaji-ui-components": "^1.0.8",
     "lucide-react": "^0.542.0"
   },
   "devDependencies": {

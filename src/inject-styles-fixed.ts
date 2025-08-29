@@ -648,9 +648,10 @@ img,video{max-width:100%;height:auto}
   stylesInjected = true;
 
   // Log success for debugging
-  console.log("✅ Abolaji UI Components styles auto-injected (v1.0.8)");
+  console.log("✅ Abolaji UI Components styles auto-injected (v1.0.7+)");
 };
 
-// IMPORTANT: Auto-inject styles when this module is imported
-// This MUST run at module load time
-injectStyles();
+// Auto-inject styles when this module is imported
+if (typeof window !== "undefined") {
+  injectStyles();
+}
